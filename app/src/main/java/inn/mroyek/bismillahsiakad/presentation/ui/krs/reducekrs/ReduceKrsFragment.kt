@@ -15,7 +15,7 @@ import dagger.android.support.AndroidSupportInjection
 import inn.mroyek.bismillahsiakad.MySiakad.Companion.pref
 import inn.mroyek.bismillahsiakad.R
 import inn.mroyek.bismillahsiakad.data.request.DeleteSomeKrsRequest
-import inn.mroyek.bismillahsiakad.data.response.DefaultStringResponse
+import inn.mroyek.bismillahsiakad.data.response.DefaultResponse
 import inn.mroyek.bismillahsiakad.data.response.KrsResponse.KrsResult
 import kotlinx.android.synthetic.main.fragment_reduce_krs.*
 import kotlinx.android.synthetic.main.fragment_reduce_krs.view.*
@@ -65,7 +65,7 @@ class ReduceKrsFragment : BottomSheetDialogFragment(), ReduceKrsContract, Reduce
         adapterKrs.notifyDataSetChanged()
     }
 
-    override fun deleteSomeKrs(sukses: DefaultStringResponse) {
+    override fun deleteSomeKrs(sukses: DefaultResponse) {
         Toast.makeText(context, sukses.toString(), Toast.LENGTH_LONG).show()
     }
 

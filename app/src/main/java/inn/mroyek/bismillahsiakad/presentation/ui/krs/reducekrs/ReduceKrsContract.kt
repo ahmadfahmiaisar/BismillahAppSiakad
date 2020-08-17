@@ -1,10 +1,10 @@
 package inn.mroyek.bismillahsiakad.presentation.ui.krs.reducekrs
 
-import inn.mroyek.bismillahsiakad.data.response.DefaultStringResponse
+import inn.mroyek.bismillahsiakad.data.response.DefaultResponse
 import inn.mroyek.bismillahsiakad.data.response.KrsResponse.KrsResult
 import inn.mroyek.bismillahsiakad.presentation.base.BaseView
 
 interface ReduceKrsContract : BaseView {
     fun getKrs(listKrs: List<KrsResult?>)
-    fun deleteSomeKrs(sukses: DefaultStringResponse)
+    fun deleteSomeKrs(sukses: DefaultResponse)
 }
