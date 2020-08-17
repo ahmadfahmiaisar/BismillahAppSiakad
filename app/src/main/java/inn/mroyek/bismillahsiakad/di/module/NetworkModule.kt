@@ -16,6 +16,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.io.File
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
@@ -31,14 +32,14 @@ object NetworkModule {
     fun provideOkHttpClient(app: Application): OkHttpClient {
         val context: Context = app.applicationContext
 
-        val cacheControl = CacheControl.Builder()
+        /*val cacheControl = CacheControl.Builder()
             .maxAge(10, TimeUnit.DAYS)
-            .build()
+            .build()*/
 
-        val cache = Cache(File(context.cacheDir, "cache"), 10 * 1024 * 1024)
+//        val cache = Cache(File(context.cacheDir, "cache"), 10 * 1024 * 1024)
 
         return OkHttpClient.Builder()
-            .cache(cache)
+//            .cache(cache)
             .connectTimeout(2000, TimeUnit.SECONDS)
             .writeTimeout(2000, TimeUnit.SECONDS)
             .readTimeout(2000, TimeUnit.SECONDS)
@@ -48,13 +49,13 @@ object NetworkModule {
             .addNetworkInterceptor { chain ->
                 chain.proceed(chain.request())
                     .newBuilder()
-                    .header(CACHE_CONTROL_HEADER, cacheControl.toString())
+//                    .header(CACHE_CONTROL_HEADER, cacheControl.toString())
                     .build()
             }
             .addInterceptor { chain ->
                 val request = chain.request()
                     .newBuilder()
-                    .cacheControl(cacheControl)
+//                    .cacheControl(cacheControl)
                     .build()
                 return@addInterceptor chain.proceed(request)
             }
@@ -69,6 +70,7 @@ object NetworkModule {
             .baseUrl(BuildConfig.BASE_URL)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
             .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(ScalarsConverterFactory.create())
             .client(okHttpClient)
             .build()
     }

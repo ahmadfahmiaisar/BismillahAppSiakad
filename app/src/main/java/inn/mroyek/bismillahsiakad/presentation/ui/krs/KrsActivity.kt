@@ -51,6 +51,7 @@ class KrsActivity : AppCompatActivity(), KrsContract {
         setUiProfile(sharPref.user)
         initRv()
 
+        bottomSheetReduceKrsFragment = ReduceKrsFragment()
     }
 
     private fun initRv() {
@@ -90,8 +91,11 @@ class KrsActivity : AppCompatActivity(), KrsContract {
     }
 
     fun addKrs(view: View) {
+
+    }
+
+    fun reduceKrs(view: View) {
         view.setOnClickListener {
-            bottomSheetReduceKrsFragment = ReduceKrsFragment()
             bottomSheetReduceKrsFragment.show(
                 supportFragmentManager,
                 bottomSheetReduceKrsFragment.tag

@@ -1,9 +1,12 @@
 package inn.mroyek.bismillahsiakad.presentation.ui.krs.reducekrs
 
+import android.util.Log
+import com.google.gson.Gson
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
 import inn.mroyek.bismillahsiakad.R
 import inn.mroyek.bismillahsiakad.data.request.DeleteSomeKrsRequest
+import inn.mroyek.bismillahsiakad.data.request.DeleteSomeKrsRequestItem
 import inn.mroyek.bismillahsiakad.data.response.KrsResponse
 import kotlinx.android.synthetic.main.reduce_krs.view.*
 
@@ -21,15 +24,27 @@ class ReduceKrsAdapter (
         view.tv_dosen.text = krs?.ruang
         view.tv_jam.text = krs?.jam
         view.tv_ket.text = krs?.keterangan
+
+       /* view.cb_itemkrs.setOnCheckedChangeListener { _, ischecked ->
+            if (ischecked) {
+                DeleteSomeKrsRequest(DeleteSomeKrsRequestItem(krs?.idKrs!!.toInt())).add(DeleteSomeKrsRequestItem(krs?.idKrs!!.toInt()))
+                onCliced()
+            }
+        }*/
+
+        val request = DeleteSomeKrsRequest()
+
         view.cb_itemkrs.setOnCheckedChangeListener { _, _ ->
-            val item = DeleteSomeKrsRequest.DeleteSomeKrsRequestItem(krs?.idKrs!!.toInt())
-            listener.onItemKrsSelected(item)
+            request.add(DeleteSomeKrsRequestItem(idKrs = krs?.idKrs!!.toInt()))
+            Log.d("isinya", "bind: ${Gson().toJson(request)} wkwkwk $request")
+            listener.onItemKrsSelected(request)
         }
+
     }
 
     override fun getLayout(): Int = R.layout.reduce_krs
 
     interface ItemKrsSelectedListener {
-        fun onItemKrsSelected(item: DeleteSomeKrsRequest.DeleteSomeKrsRequestItem)
+        fun onItemKrsSelected(item: DeleteSomeKrsRequest)
     }
 }

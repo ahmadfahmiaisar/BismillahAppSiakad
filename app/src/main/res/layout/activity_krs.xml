@@ -114,6 +114,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:text="Reduce Krs"
+            android:onClick="reduceKrs"
             app:layout_constraintBottom_toBottomOf="@+id/addkrs"
             app:layout_constraintEnd_toStartOf="@+id/addkrs"
             app:layout_constraintTop_toTopOf="@+id/addkrs" />

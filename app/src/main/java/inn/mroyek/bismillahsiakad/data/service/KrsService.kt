@@ -1,6 +1,7 @@
 package inn.mroyek.bismillahsiakad.data.service
 
 import inn.mroyek.bismillahsiakad.data.request.DeleteSomeKrsRequest
+import inn.mroyek.bismillahsiakad.data.response.DefaultStringResponse
 import inn.mroyek.bismillahsiakad.data.response.KrsResponse
 import io.reactivex.Flowable
 import io.reactivex.Observable
@@ -11,8 +12,9 @@ interface KrsService {
     @GET("krs/getkrsbyusername/{username}")
     fun getKrsbyUsername(@Path("username") username: String?) : Flowable<KrsResponse>
 
-    @Headers("Content-Type: text/html")
-    @HTTP(method = "DELETE", path = "krs/getkrs/deletesomekrs", hasBody = true)
-//    @DELETE("krs/getkrs/deletesomekrs")
-    fun deleteSomeKrs(@Body deleteSomeKrsRequest: DeleteSomeKrsRequest) : Observable<String>
+    @HTTP(method = "POST", path = "krs/deletesomekrs", hasBody = true)
+    fun deleteSomeKrs(@Body deleteSomeKrsRequest: DeleteSomeKrsRequest) : Observable<DefaultStringResponse>
+
+    @HTTP(method = "POST", path = "", hasBody = true)
+    fun insertKrs()
 }

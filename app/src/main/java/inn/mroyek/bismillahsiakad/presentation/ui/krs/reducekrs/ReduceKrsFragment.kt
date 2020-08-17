@@ -15,6 +15,7 @@ import dagger.android.support.AndroidSupportInjection
 import inn.mroyek.bismillahsiakad.MySiakad.Companion.pref
 import inn.mroyek.bismillahsiakad.R
 import inn.mroyek.bismillahsiakad.data.request.DeleteSomeKrsRequest
+import inn.mroyek.bismillahsiakad.data.response.DefaultStringResponse
 import inn.mroyek.bismillahsiakad.data.response.KrsResponse.KrsResult
 import kotlinx.android.synthetic.main.fragment_reduce_krs.*
 import kotlinx.android.synthetic.main.fragment_reduce_krs.view.*
@@ -52,6 +53,7 @@ class ReduceKrsFragment : BottomSheetDialogFragment(), ReduceKrsContract, Reduce
         }
 
         presenter.getKrsbyUser(sharePref.user.username)
+
     }
 
     override fun getKrs(listKrs: List<KrsResult?>) {
@@ -63,8 +65,8 @@ class ReduceKrsFragment : BottomSheetDialogFragment(), ReduceKrsContract, Reduce
         adapterKrs.notifyDataSetChanged()
     }
 
-    override fun deleteSomeKrs(sukses: String) {
-        Toast.makeText(context, sukses, Toast.LENGTH_LONG).show()
+    override fun deleteSomeKrs(sukses: DefaultStringResponse) {
+        Toast.makeText(context, sukses.toString(), Toast.LENGTH_LONG).show()
     }
 
     override fun onDestroy() {
@@ -72,18 +74,16 @@ class ReduceKrsFragment : BottomSheetDialogFragment(), ReduceKrsContract, Reduce
         super.onDestroy()
     }
 
-    override fun onItemKrsSelected(item: DeleteSomeKrsRequest.DeleteSomeKrsRequestItem) {
+    override fun onItemKrsSelected(item: DeleteSomeKrsRequest) {
         Log.d("isinyaa", "onItemKrsSelected: ${Gson().toJson(item)} wkwk $item")
 
-        val astaga = DeleteSomeKrsRequest()
-        astaga.add(item)
-//        astaga.add(item)
-        Log.d("isinyaaaa", ": wkwk $astaga")
-        val okeeh = Gson().toJson(astaga)
-        Log.d("isinyaaaawkwk", ": wkwk $okeeh")
+//        btn_reduce_krs.setOnClickListener {
+//            presenter.reduceSomeKrs(item)
+//        }
         btn_reduce_krs.setOnClickListener {
-            presenter.reduceSomeKrs(astaga)
+            presenter.reduceSomeKrs(item)
         }
+//        presenter.getKrsbyUser(sharePref.user.username)
     }
 
 }
