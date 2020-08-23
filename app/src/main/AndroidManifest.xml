@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:name=".presentation.ui.krs.KrsActivity"/>
+        <activity android:name=".presentation.ui.krs.parent.KrsActivity"/>
         <activity android:name=".presentation.ui.home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

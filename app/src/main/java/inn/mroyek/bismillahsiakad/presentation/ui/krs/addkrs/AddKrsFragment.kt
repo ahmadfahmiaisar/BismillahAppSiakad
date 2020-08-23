@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import inn.mroyek.bismillahsiakad.R
-import inn.mroyek.bismillahsiakad.presentation.ui.krs.KrsPresenter
-import javax.inject.Inject
 
 class AddKrsFragment : Fragment() {
 

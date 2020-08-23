@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EAF3FB"
+    android:background="@color/color_background"
     tools:context=".presentation.ui.krs.addkrs.AddKrsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,23 +16,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-       <!-- <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="@dimen/_25sdp"
-            android:layout_height="@dimen/_25sdp"
-            android:layout_marginStart="16dp"
-            android:onClick="goBack"
-            android:src="@drawable/ic_back"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />-->
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/productsans_bold"
-            android:text="Update Krs"
+            android:text="@string/update_krs"
             android:textColor="#fff"
             android:textSize="@dimen/_20sdp"
             android:textStyle="bold"
@@ -40,11 +29,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:text=""
-            android:layout_height="wrap_content"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    
 </androidx.constraintlayout.widget.ConstraintLayout>

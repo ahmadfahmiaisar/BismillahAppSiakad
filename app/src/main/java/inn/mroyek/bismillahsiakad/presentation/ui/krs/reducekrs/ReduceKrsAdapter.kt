@@ -1,7 +1,5 @@
 package inn.mroyek.bismillahsiakad.presentation.ui.krs.reducekrs
 
-import android.util.Log
-import com.google.gson.Gson
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
 import inn.mroyek.bismillahsiakad.R
@@ -10,7 +8,7 @@ import inn.mroyek.bismillahsiakad.data.request.DeleteSomeKrsRequestItem
 import inn.mroyek.bismillahsiakad.data.response.KrsResponse
 import kotlinx.android.synthetic.main.reduce_krs.view.*
 
-class ReduceKrsAdapter (
+class ReduceKrsAdapter(
     private val krs: KrsResponse.KrsResult?,
     private val listener: ItemKrsSelectedListener
 ) : Item() {
@@ -25,19 +23,17 @@ class ReduceKrsAdapter (
         view.tv_jam.text = krs?.jam
         view.tv_ket.text = krs?.keterangan
 
-       /* view.cb_itemkrs.setOnCheckedChangeListener { _, ischecked ->
-            if (ischecked) {
-                DeleteSomeKrsRequest(DeleteSomeKrsRequestItem(krs?.idKrs!!.toInt())).add(DeleteSomeKrsRequestItem(krs?.idKrs!!.toInt()))
-                onCliced()
+        val request = ReduceKrsFragment.requested
+        val item = DeleteSomeKrsRequestItem(krs?.idKrs?.toInt())
+        view.cb_itemkrs.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                request.add(item)
+                listener.onItemKrsSelected(request)
+            } else {
+                request.remove(item)
+                listener.onItemKrsSelected(request)
             }
-        }*/
 
-        val request = DeleteSomeKrsRequest()
-
-        view.cb_itemkrs.setOnCheckedChangeListener { _, _ ->
-            request.add(DeleteSomeKrsRequestItem(idKrs = krs?.idKrs!!.toInt()))
-            Log.d("isinya", "bind: ${Gson().toJson(request)} wkwkwk $request")
-            listener.onItemKrsSelected(request)
         }
 
     }
@@ -45,6 +41,6 @@ class ReduceKrsAdapter (
     override fun getLayout(): Int = R.layout.reduce_krs
 
     interface ItemKrsSelectedListener {
-        fun onItemKrsSelected(item: DeleteSomeKrsRequest)
+        fun onItemKrsSelected(request: DeleteSomeKrsRequest)
     }
 }

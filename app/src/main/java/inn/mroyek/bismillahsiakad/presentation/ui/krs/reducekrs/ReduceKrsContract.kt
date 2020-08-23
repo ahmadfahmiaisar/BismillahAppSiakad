@@ -6,5 +6,5 @@ import inn.mroyek.bismillahsiakad.presentation.base.BaseView
 
 interface ReduceKrsContract : BaseView {
     fun getKrs(listKrs: List<KrsResult?>)
-    fun deleteSomeKrs(sukses: DefaultResponse)
+    fun deleteSomeKrs(response: String)
 }

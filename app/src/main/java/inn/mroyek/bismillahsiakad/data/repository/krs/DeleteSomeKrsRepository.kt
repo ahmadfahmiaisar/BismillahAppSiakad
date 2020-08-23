@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 @Reusable
 class DeleteSomeKrsRepository @Inject constructor(private val service: KrsService) {
-    fun reduceKrs(deleteSomeKrsRequest: DeleteSomeKrsRequest) : Observable<DefaultResponse>{
+    fun reduceKrs(deleteSomeKrsRequest: DeleteSomeKrsRequest) : Observable<String>{
         return service.deleteSomeKrs(deleteSomeKrsRequest)
             .map { it }
     }

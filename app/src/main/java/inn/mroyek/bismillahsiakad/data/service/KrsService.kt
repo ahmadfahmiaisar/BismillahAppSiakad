@@ -13,7 +13,7 @@ interface KrsService {
     fun getKrsbyUsername(@Path("username") username: String?) : Flowable<KrsResponse>
 
     @HTTP(method = "POST", path = "krs/deletesomekrs", hasBody = true)
-    fun deleteSomeKrs(@Body deleteSomeKrsRequest: DeleteSomeKrsRequest) : Observable<DefaultResponse>
+    fun deleteSomeKrs(@Body deleteSomeKrsRequest: DeleteSomeKrsRequest) : Observable<String>
 
     @HTTP(method = "POST", path = "", hasBody = true)
     fun insertKrs()

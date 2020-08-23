@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EAF3FB"
-    tools:context=".presentation.ui.krs.KrsActivity">
+    tools:context=".presentation.ui.krs.parent.KrsActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolbar"

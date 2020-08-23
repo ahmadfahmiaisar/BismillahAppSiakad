@@ -8,7 +8,7 @@ import dagger.android.AndroidInjection
 import inn.mroyek.bismillahsiakad.MySiakad.Companion.pref
 import inn.mroyek.bismillahsiakad.R
 import inn.mroyek.bismillahsiakad.presentation.model.User
-import inn.mroyek.bismillahsiakad.presentation.ui.krs.KrsActivity
+import inn.mroyek.bismillahsiakad.presentation.ui.krs.parent.KrsActivity
 import inn.mroyek.bismillahsiakad.presentation.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.profile.*

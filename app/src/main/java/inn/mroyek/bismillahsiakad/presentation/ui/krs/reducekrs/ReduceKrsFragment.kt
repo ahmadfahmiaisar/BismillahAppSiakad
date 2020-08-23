@@ -8,12 +8,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.google.gson.Gson
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import dagger.android.support.AndroidSupportInjection
 import inn.mroyek.bismillahsiakad.MySiakad.Companion.pref
 import inn.mroyek.bismillahsiakad.R
+import inn.mroyek.bismillahsiakad.common.logD
 import inn.mroyek.bismillahsiakad.data.request.DeleteSomeKrsRequest
 import inn.mroyek.bismillahsiakad.data.response.DefaultResponse
 import inn.mroyek.bismillahsiakad.data.response.KrsResponse.KrsResult
@@ -29,6 +29,10 @@ class ReduceKrsFragment : BottomSheetDialogFragment(), ReduceKrsContract, Reduce
     private val sharePref = pref
 
     private val adapterKrs = GroupAdapter<GroupieViewHolder>()
+
+    companion object {
+        var requested = DeleteSomeKrsRequest()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +57,6 @@ class ReduceKrsFragment : BottomSheetDialogFragment(), ReduceKrsContract, Reduce
         }
 
         presenter.getKrsbyUser(sharePref.user.username)
-
     }
 
     override fun getKrs(listKrs: List<KrsResult?>) {
@@ -65,8 +68,9 @@ class ReduceKrsFragment : BottomSheetDialogFragment(), ReduceKrsContract, Reduce
         adapterKrs.notifyDataSetChanged()
     }
 
-    override fun deleteSomeKrs(sukses: DefaultResponse) {
-        Toast.makeText(context, sukses.toString(), Toast.LENGTH_LONG).show()
+    override fun deleteSomeKrs(response: String) {
+        Toast.makeText(context, response, Toast.LENGTH_LONG).show()
+        dismiss()
     }
 
     override fun onDestroy() {
@@ -74,16 +78,14 @@ class ReduceKrsFragment : BottomSheetDialogFragment(), ReduceKrsContract, Reduce
         super.onDestroy()
     }
 
-    override fun onItemKrsSelected(item: DeleteSomeKrsRequest) {
-        Log.d("isinyaa", "onItemKrsSelected: ${Gson().toJson(item)} wkwk $item")
+    override fun onItemKrsSelected(request: DeleteSomeKrsRequest) {
+        logD("isinyacok", "nyobainCok: $request")
 
-//        btn_reduce_krs.setOnClickListener {
-//            presenter.reduceSomeKrs(item)
-//        }
         btn_reduce_krs.setOnClickListener {
-            presenter.reduceSomeKrs(item)
+            presenter.reduceSomeKrs(request)
+            Toast.makeText(context, "hm", Toast.LENGTH_SHORT).show()
+            dismiss()
         }
-//        presenter.getKrsbyUser(sharePref.user.username)
     }
 
 }
