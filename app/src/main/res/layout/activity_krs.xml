@@ -95,6 +95,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:text="Edit"
+            android:onClick="editKrs"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -104,16 +105,19 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:text="Add Krs"
+            android:visibility="gone"
             android:onClick="addKrs"
             app:layout_constraintBottom_toBottomOf="@+id/editkrs"
             app:layout_constraintEnd_toStartOf="@+id/editkrs"
             app:layout_constraintTop_toTopOf="@+id/editkrs" />
 
         <TextView
+            android:id="@+id/reduceKrs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:text="Reduce Krs"
+            android:visibility="gone"
             android:onClick="reduceKrs"
             app:layout_constraintBottom_toBottomOf="@+id/addkrs"
             app:layout_constraintEnd_toStartOf="@+id/addkrs"

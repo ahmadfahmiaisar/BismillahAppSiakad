@@ -18,6 +18,7 @@ import inn.mroyek.bismillahsiakad.presentation.ui.krs.addkrs.AddKrsFragment
 import inn.mroyek.bismillahsiakad.presentation.ui.krs.reducekrs.ReduceKrsFragment
 import inn.mroyek.bismillahsiakad.presentation.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_krs.*
+import kotlinx.android.synthetic.main.fragment_add_krs.*
 import kotlinx.android.synthetic.main.profile.*
 import javax.inject.Inject
 
@@ -109,6 +110,21 @@ class KrsActivity : AppCompatActivity(),
                 supportFragmentManager,
                 bottomSheetReduceKrsFragment.tag
             )
+        }
+    }
+
+    private var countClickEdit = 0
+    fun editKrs(view: View) {
+        view.setOnClickListener {
+            if (countClickEdit == 0) {
+                reduceKrs.visibility = View.VISIBLE
+                addkrs.visibility = View.VISIBLE
+                countClickEdit = 1
+            } else if (countClickEdit == 1) {
+                reduceKrs.visibility = View.GONE
+                addkrs.visibility = View.GONE
+                countClickEdit = 0
+            }
         }
     }
 
