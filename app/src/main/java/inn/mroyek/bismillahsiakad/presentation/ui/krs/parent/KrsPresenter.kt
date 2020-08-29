@@ -18,7 +18,7 @@ class KrsPresenter @Inject constructor(private val repository: KrsRepository) :
                 ?.observeOn(AndroidSchedulers.mainThread())
                 ?.subscribe({
                     view?.loading(false)
-                    view?.getKrs( it)
+                    view?.getKrs(it)
                 }, {
                     logD("ISI", it.message.toString())
                 })!!

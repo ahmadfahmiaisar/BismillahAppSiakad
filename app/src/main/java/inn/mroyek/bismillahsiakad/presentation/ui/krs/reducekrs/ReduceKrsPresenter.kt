@@ -9,7 +9,10 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class ReduceKrsPresenter @Inject constructor(private val repository: DeleteSomeKrsRepository, private val krsRepository: KrsRepository) : BasePresenter<ReduceKrsContract>() {
+class ReduceKrsPresenter @Inject constructor(
+    private val repository: DeleteSomeKrsRepository,
+    private val krsRepository: KrsRepository
+) : BasePresenter<ReduceKrsContract>() {
     fun reduceSomeKrs(deleteSomeKrsRequest: DeleteSomeKrsRequest) {
         disposable.add(
             repository.reduceKrs(deleteSomeKrsRequest)
@@ -21,13 +24,13 @@ class ReduceKrsPresenter @Inject constructor(private val repository: DeleteSomeK
         )
     }
 
-    fun getKrsbyUser(username: String?){
+    fun getKrsbyUser(username: String?) {
         disposable.add(
             krsRepository.getKrsbyUsername(username)
                 ?.observeOn(Schedulers.io())
                 ?.observeOn(AndroidSchedulers.mainThread())
                 ?.subscribe({
-                    view?.getKrs( it)
+                    view?.getKrs(it)
                 }, {
                     logD("ISI", it.message.toString())
                 })!!

@@ -13,6 +13,5 @@ class KrsRepository @Inject constructor(private val service: KrsService) {
             .flatMap { Flowable.fromIterable(it.krs) }
             .toList()
             .toFlowable()
-
     }
 }

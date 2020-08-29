@@ -14,6 +14,7 @@ import inn.mroyek.bismillahsiakad.R
 import inn.mroyek.bismillahsiakad.common.logD
 import inn.mroyek.bismillahsiakad.data.response.KrsResponse.KrsResult
 import inn.mroyek.bismillahsiakad.presentation.model.User
+import inn.mroyek.bismillahsiakad.presentation.ui.krs.addkrs.AddKrsFragment
 import inn.mroyek.bismillahsiakad.presentation.ui.krs.reducekrs.ReduceKrsFragment
 import inn.mroyek.bismillahsiakad.presentation.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_krs.*
@@ -31,6 +32,7 @@ class KrsActivity : AppCompatActivity(),
     private val adapterKrs = GroupAdapter<GroupieViewHolder>()
 
     private lateinit var bottomSheetReduceKrsFragment: ReduceKrsFragment
+    private lateinit var bottomSheetAddKrsFragment: AddKrsFragment
 
     override fun onResume() {
         super.onResume()
@@ -51,6 +53,7 @@ class KrsActivity : AppCompatActivity(),
         initRv()
 
         bottomSheetReduceKrsFragment = ReduceKrsFragment()
+        bottomSheetAddKrsFragment = AddKrsFragment()
     }
 
     private fun initRv() {
@@ -72,9 +75,7 @@ class KrsActivity : AppCompatActivity(),
         adapterKrs.clear()
         listKrs.forEach {
             adapterKrs.add(
-                KrsAdapter(
-                    it
-                )
+                KrsAdapter(it)
             )
         }
         adapterKrs.notifyDataSetChanged()
@@ -94,7 +95,12 @@ class KrsActivity : AppCompatActivity(),
     }
 
     fun addKrs(view: View) {
-
+        view.setOnClickListener {
+            bottomSheetAddKrsFragment.show(
+                supportFragmentManager,
+                bottomSheetAddKrsFragment.tag
+            )
+        }
     }
 
     fun reduceKrs(view: View) {

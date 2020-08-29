@@ -6,7 +6,7 @@ import inn.mroyek.bismillahsiakad.R
 import inn.mroyek.bismillahsiakad.data.request.DeleteSomeKrsRequest
 import inn.mroyek.bismillahsiakad.data.request.DeleteSomeKrsRequestItem
 import inn.mroyek.bismillahsiakad.data.response.KrsResponse
-import kotlinx.android.synthetic.main.reduce_krs.view.*
+import kotlinx.android.synthetic.main.insert_and_reduce_krs.view.*
 
 class ReduceKrsAdapter(
     private val krs: KrsResponse.KrsResult?,
@@ -38,7 +38,7 @@ class ReduceKrsAdapter(
 
     }
 
-    override fun getLayout(): Int = R.layout.reduce_krs
+    override fun getLayout(): Int = R.layout.insert_and_reduce_krs
 
     interface ItemKrsSelectedListener {
         fun onItemKrsSelected(request: DeleteSomeKrsRequest)
