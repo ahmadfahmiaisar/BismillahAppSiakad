@@ -13,10 +13,10 @@
         android:layout_height="@dimen/_50sdp"
         android:background="@color/colorPrimary"
         android:fontFamily="@font/productsans_bold"
+        android:gravity="center"
         android:text="Update Krs"
         android:textColor="#fff"
         android:textSize="@dimen/_20sdp"
-        android:gravity="center"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -162,16 +162,22 @@
                 app:layout_constraintStart_toStartOf="@+id/guideline9"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_add_krs"
+            <ScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/kode_matkul"
-                tools:listitem="@layout/insert_and_reduce_krs" />
+                app:layout_constraintTop_toBottomOf="@+id/kode_matkul">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_add_krs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/insert_and_reduce_krs" />
+            </ScrollView>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline"

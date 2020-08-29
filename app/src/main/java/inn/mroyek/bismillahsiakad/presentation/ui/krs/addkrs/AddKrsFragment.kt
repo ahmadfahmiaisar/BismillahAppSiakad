@@ -74,7 +74,8 @@ class AddKrsFragment : BottomSheetDialogFragment(), AddKrsContract, AddKrsAdapte
     }
 
     override fun onDestroy() {
-        super.onDestroy()
         presenter.destroy()
+        requested.clear()
+        super.onDestroy()
     }
 }

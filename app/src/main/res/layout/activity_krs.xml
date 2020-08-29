@@ -94,8 +94,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="Edit"
             android:onClick="editKrs"
+            android:text="Edit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -104,9 +104,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
+            android:onClick="addKrs"
             android:text="Add Krs"
             android:visibility="gone"
-            android:onClick="addKrs"
             app:layout_constraintBottom_toBottomOf="@+id/editkrs"
             app:layout_constraintEnd_toStartOf="@+id/editkrs"
             app:layout_constraintTop_toTopOf="@+id/editkrs" />
@@ -116,9 +116,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
+            android:onClick="reduceKrs"
             android:text="Reduce Krs"
             android:visibility="gone"
-            android:onClick="reduceKrs"
             app:layout_constraintBottom_toBottomOf="@+id/addkrs"
             app:layout_constraintEnd_toStartOf="@+id/addkrs"
             app:layout_constraintTop_toTopOf="@+id/addkrs" />
@@ -262,15 +262,21 @@
                     app:layout_constraintStart_toStartOf="@+id/guideline9"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_krs"
+                <ScrollView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/kode_matkul"
-                    tools:listitem="@layout/krs" />
+                    app:layout_constraintTop_toBottomOf="@+id/kode_matkul">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_krs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/krs" />
+                </ScrollView>
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline"

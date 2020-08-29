@@ -75,6 +75,7 @@ class ReduceKrsFragment : BottomSheetDialogFragment(), ReduceKrsContract, Reduce
 
     override fun onDestroy() {
         presenter.destroy()
+        requested.clear()
         super.onDestroy()
     }
 
