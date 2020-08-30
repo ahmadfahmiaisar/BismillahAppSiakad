@@ -13,18 +13,13 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="587d764f-baee-45dc-b0ca-e1a950d17b9b" name="Default Changelist" comment="logout()">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/data/repository/dhs/DhsRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/data/response/DhsResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/dhs/DhsActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/dhs/DhsContract.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/dhs/DhsPresenter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dhs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_dhs.xml" afterDir="false" />
+    <list default="true" id="587d764f-baee-45dc-b0ca-e1a950d17b9b" name="Default Changelist" comment="dhs and fix setup">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/dhs/DhsAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -35,27 +30,13 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_daimajia_androidanimations_library_2_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_daimajia_androidanimations_library_2_3_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_dagger_dagger_android_2_20_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_dagger_dagger_android_2_20_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_dagger_dagger_android_support_2_20_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_dagger_dagger_android_support_2_20_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/app/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/data/service/DhsService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/data/service/DhsService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/data/service/KrsService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/data/service/KrsService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/model/Krs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/model/Krs.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/krs/parent/KrsAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/krs/parent/KrsAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_krs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_krs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_add_krs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_add_krs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_reduce_krs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_reduce_krs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/krs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/krs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/data/repository/dhs/DhsRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/data/repository/dhs/DhsRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/di/module/ActivityModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/di/module/ActivityModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/dhs/DhsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/dhs/DhsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/dhs/DhsPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/dhs/DhsPresenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/home/HomeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/home/HomeActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +56,12 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -274,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598790262354</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="dhs and fix setup">
+      <created>1598790371710</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1598790371710</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -298,14 +291,15 @@
     <MESSAGE value="btn edit" />
     <MESSAGE value="bugfix layout and list" />
     <MESSAGE value="service module" />
-    <option name="LAST_COMMIT_MESSAGE" value="service module" />
+    <MESSAGE value="dhs and fix setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="dhs and fix setup" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="742" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1598790072458">
+    <state x="742" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1598790591023">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="742" y="241" key="#com.intellij.ide.util.MemberChooser/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1596906707078" />
-    <state x="742" y="241" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598790072458" />
+    <state x="742" y="241" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598790591023" />
     <state x="742" y="248" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1598712679187" />
     <state x="689" y="309" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1596826991141">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -342,10 +336,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="815" y="283" key="AndroidProcessChooserDialog/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1596998330160" />
-    <state x="574" y="47" key="CommitChangelistDialog2" timestamp="1598790286798">
+    <state x="574" y="47" key="CommitChangelistDialog2" timestamp="1598791605226">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="574" y="47" key="CommitChangelistDialog2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598790286798" />
+    <state x="574" y="47" key="CommitChangelistDialog2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598791605226" />
     <state x="574" y="48" key="CommitChangelistDialog2/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1598715529340" />
     <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1597654600060">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -355,29 +349,29 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="824" y="419" key="Github.ShareDialog/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1597654613935" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1598782632483">
+    <state width="1877" height="195" key="GridCell.Tab.0.bottom" timestamp="1598791318219">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="172" key="GridCell.Tab.0.bottom/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1597653242673" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598782632483" />
+    <state width="1877" height="195" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598791318219" />
     <state width="1877" height="417" key="GridCell.Tab.0.bottom/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1598716672331" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1598782632482">
+    <state width="1877" height="195" key="GridCell.Tab.0.center" timestamp="1598791318219">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="172" key="GridCell.Tab.0.center/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1597653242673" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598782632482" />
+    <state width="1877" height="195" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598791318219" />
     <state width="1877" height="417" key="GridCell.Tab.0.center/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1598716672331" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1598782632482">
+    <state width="1877" height="195" key="GridCell.Tab.0.left" timestamp="1598791318219">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="172" key="GridCell.Tab.0.left/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1597653242672" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598782632482" />
+    <state width="1877" height="195" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598791318219" />
     <state width="1877" height="417" key="GridCell.Tab.0.left/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1598716672331" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1598782632483">
+    <state width="1877" height="195" key="GridCell.Tab.0.right" timestamp="1598791318219">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="172" key="GridCell.Tab.0.right/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1597653242673" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598782632483" />
+    <state width="1877" height="195" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598791318219" />
     <state width="1877" height="417" key="GridCell.Tab.0.right/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1598716672331" />
     <state width="1877" height="318" key="GridCell.Tab.1.bottom" timestamp="1597590292815">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -399,6 +393,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="167" key="SettingsEditor/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1596992971805" />
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1598790386363">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598790386363" />
     <state x="832" y="191" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1598790326939">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

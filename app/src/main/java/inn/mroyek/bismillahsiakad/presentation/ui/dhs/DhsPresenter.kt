@@ -9,7 +9,7 @@ import javax.inject.Inject
 class DhsPresenter @Inject constructor(private val repository: DhsRepository) :
     BasePresenter<DhsContract>() {
 
-    fun getDhsByUsername(username: String) {
+    fun getDhsByUsername(username: String?) {
         disposable.add(
             repository.getDhsByUsername(username)
                 .observeOn(Schedulers.io())

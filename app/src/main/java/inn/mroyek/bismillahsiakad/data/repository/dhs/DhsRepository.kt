@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 @Reusable
 class DhsRepository @Inject constructor(private val service: DhsService) {
-    fun getDhsByUsername(username: String): Flowable<MutableList<ListDhs>> {
+    fun getDhsByUsername(username: String?): Flowable<MutableList<ListDhs>> {
         return service.getDhsByUsername(username)
             .flatMap { Flowable.fromIterable(it.listDhs) }
             .toList()
