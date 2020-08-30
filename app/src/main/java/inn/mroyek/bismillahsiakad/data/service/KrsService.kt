@@ -2,12 +2,14 @@ package inn.mroyek.bismillahsiakad.data.service
 
 import inn.mroyek.bismillahsiakad.data.request.DeleteSomeKrsRequest
 import inn.mroyek.bismillahsiakad.data.request.InsertKrsRequest
-import inn.mroyek.bismillahsiakad.data.response.DefaultResponse
 import inn.mroyek.bismillahsiakad.data.response.KrsResponse
 import inn.mroyek.bismillahsiakad.data.response.MatkulResponse
 import io.reactivex.Flowable
 import io.reactivex.Observable
-import retrofit2.http.*
+import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.HTTP
+import retrofit2.http.Path
 
 interface KrsService {
     //Krs . get krs by username

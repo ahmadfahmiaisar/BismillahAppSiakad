@@ -25,14 +25,15 @@
             android:src="@drawable/ic_back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/productsans_bold"
-            android:text="KRS"
+            android:text="@string/krs"
             android:textColor="#fff"
             android:textSize="@dimen/_20sdp"
             android:textStyle="bold"
@@ -84,7 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="KRS (Kartu Rencana Studi)"
+            android:text="@string/krs_kartu_rencana_studi"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -95,7 +96,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:onClick="editKrs"
-            android:text="Edit"
+            android:text="@string/edit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -105,7 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:onClick="addKrs"
-            android:text="Add Krs"
+            android:text="@string/add_krs"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/editkrs"
             app:layout_constraintEnd_toStartOf="@+id/editkrs"
@@ -117,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:onClick="reduceKrs"
-            android:text="Reduce Krs"
+            android:text="@string/reduce_krs"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/addkrs"
             app:layout_constraintEnd_toStartOf="@+id/addkrs"
@@ -126,9 +127,9 @@
         <HorizontalScrollView
             android:id="@+id/horizontalScrollView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -137,7 +138,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/no"
@@ -147,7 +148,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:gravity="center"
-                    android:text="No"
+                    android:text="@string/no"
                     app:layout_constraintEnd_toStartOf="@+id/guideline"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -160,7 +161,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:gravity="center"
-                    android:text="Kode Matkul"
+                    android:text="@string/kode_matkul"
                     app:layout_constraintEnd_toStartOf="@+id/guideline2"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -173,7 +174,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:gravity="center"
-                    android:text="Nama Matkul"
+                    android:text="@string/nama_matkul"
                     app:layout_constraintEnd_toStartOf="@+id/guideline3"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -184,7 +185,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
-                    android:text="Semester"
+                    android:text="@string/semester"
                     app:layout_constraintEnd_toStartOf="@+id/guideline4"
                     app:layout_constraintStart_toStartOf="@+id/guideline3"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -195,7 +196,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
-                    android:text="SKS"
+                    android:text="@string/sks"
                     app:layout_constraintEnd_toStartOf="@+id/guideline5"
                     app:layout_constraintStart_toStartOf="@+id/guideline4"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -206,11 +207,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
-                    android:text="Rombel"
+                    android:text="@string/rombel"
                     app:layout_constraintEnd_toStartOf="@+id/guideline6"
                     app:layout_constraintStart_toStartOf="@+id/guideline5"
                     app:layout_constraintTop_toTopOf="parent" />
-
 
                 <TextView
                     android:id="@+id/dosen"
@@ -220,7 +220,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:gravity="center"
-                    android:text="Dosen"
+                    android:text="@string/dosen"
                     app:layout_constraintEnd_toStartOf="@+id/guideline7"
                     app:layout_constraintStart_toStartOf="@+id/guideline6"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -233,7 +233,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:gravity="center"
-                    android:text="Ket"
+                    android:text="@string/ket"
                     app:layout_constraintEnd_toStartOf="@+id/guideline8"
                     app:layout_constraintStart_toStartOf="@+id/guideline7"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -246,7 +246,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:gravity="center"
-                    android:text="Ruang"
+                    android:text="@string/ruang"
                     app:layout_constraintEnd_toStartOf="@+id/guideline9"
                     app:layout_constraintStart_toStartOf="@+id/guideline8"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -258,25 +258,23 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
-                    android:text="Jam"
+                    android:text="@string/jam"
                     app:layout_constraintStart_toStartOf="@+id/guideline9"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <ScrollView
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_krs"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:orientation="vertical"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/kode_matkul">
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_krs"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:listitem="@layout/krs" />
-                </ScrollView>
+                    app:layout_constraintTop_toBottomOf="@+id/kode_matkul"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:itemCount="10"
+                    tools:listitem="@layout/krs" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline"

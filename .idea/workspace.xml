@@ -14,10 +14,49 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="587d764f-baee-45dc-b0ca-e1a950d17b9b" name="Default Changelist" comment="logout()" />
+    <list default="true" id="587d764f-baee-45dc-b0ca-e1a950d17b9b" name="Default Changelist" comment="logout()">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/data/repository/dhs/DhsRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/data/response/DhsResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/dhs/DhsActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/dhs/DhsContract.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/dhs/DhsPresenter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dhs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_dhs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_daimajia_androidanimations_library_2_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_daimajia_androidanimations_library_2_3_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_dagger_dagger_android_2_20_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_dagger_dagger_android_2_20_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_dagger_dagger_android_support_2_20_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_dagger_dagger_android_support_2_20_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/data/service/DhsService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/data/service/DhsService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/data/service/KrsService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/data/service/KrsService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/model/Krs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/model/Krs.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/krs/parent/KrsAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/krs/parent/KrsAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_krs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_krs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_add_krs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_add_krs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_reduce_krs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_reduce_krs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/krs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/krs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +66,7 @@
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
     <option name="PARALLEL_COMPILATION" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Hpku_wkwk" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_27" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -46,8 +85,8 @@
         <option value="Gradle Kotlin DSL Build Script" />
         <option value="Kotlin Class" />
         <option value="layoutResourceFile_vertical" />
-        <option value="layoutResourceFile" />
         <option value="resourceFile" />
+        <option value="layoutResourceFile" />
         <option value="Kotlin File" />
       </list>
     </option>
@@ -81,16 +120,17 @@
     <property name="recommended.upgrade.do.not.ask.for.version" value="3.5.3" />
     <property name="recommended.upgrade.last.time.stamp" value="1596898196540" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\bismillahsiakad\app\src\main\java\inn\mroyek\bismillahsiakad\data\response" />
-      <recent name="D:\bismillahsiakad\app\src\main\res\drawable-v24" />
-    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="inn.mroyek.bismillahsiakad.data.repository.krs" />
       <recent name="inn.mroyek.bismillahsiakad.data.service" />
       <recent name="inn.mroyek.bismillahsiakad.presentation.ui.login" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\bismillahsiakad\app\src\main\java\inn\mroyek\bismillahsiakad\data\response" />
+      <recent name="D:\bismillahsiakad\app\src\main\res\drawable-v24" />
     </key>
     <key name="android.template.packageName">
       <recent name="inn.mroyek.bismillahsiakad.presentation.ui.krs" />
@@ -102,6 +142,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\bismillahsiakad\app\src\main\res\drawable" />
       <recent name="D:\bismillahsiakad\app\src\main\res\font" />
+    </key>
+    <key name="android.template.1953880237">
+      <recent name="inn.mroyek.bismillahsiakad.presentation.ui.dhs" />
     </key>
   </component>
   <component name="RunManager">
@@ -203,7 +246,35 @@
       <option name="project" value="LOCAL" />
       <updated>1590087555821</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="insert krs">
+      <created>1598714917288</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1598714917289</updated>
+    </task>
+    <task id="LOCAL-00006" summary="btn edit">
+      <created>1598715529863</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1598715529863</updated>
+    </task>
+    <task id="LOCAL-00007" summary="bugfix layout and list">
+      <created>1598717997007</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1598717997007</updated>
+    </task>
+    <task id="LOCAL-00008" summary="service module">
+      <created>1598790262354</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1598790262354</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -223,13 +294,19 @@
     <MESSAGE value="ui home" />
     <MESSAGE value="set sharepref and get user by username" />
     <MESSAGE value="logout()" />
-    <option name="LAST_COMMIT_MESSAGE" value="logout()" />
+    <MESSAGE value="insert krs" />
+    <MESSAGE value="btn edit" />
+    <MESSAGE value="bugfix layout and list" />
+    <MESSAGE value="service module" />
+    <option name="LAST_COMMIT_MESSAGE" value="service module" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="742" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1596906707078">
+    <state x="742" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1598790072458">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="742" y="241" key="#com.intellij.ide.util.MemberChooser/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1596906707078" />
+    <state x="742" y="241" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598790072458" />
+    <state x="742" y="248" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1598712679187" />
     <state x="689" y="309" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1596826991141">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -242,22 +319,34 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="748" y="394" width="427" height="261" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1596828009196" />
+    <state x="714" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1598789235899">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="714" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598789235899" />
+    <state x="714" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1598709397456" />
     <state x="731" y="35" width="496" height="980" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1596829131672">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="731" y="35" width="496" height="980" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1596829131672" />
-    <state x="540" y="280" key="AndroidCreateResourceFileDialog" timestamp="1596833507233">
+    <state x="540" y="280" key="AndroidCreateResourceFileDialog" timestamp="1598727404032">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="540" y="280" key="AndroidCreateResourceFileDialog/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1596833507233" />
-    <state x="818" y="332" key="AndroidCreateXmlResourceDialog" timestamp="1596898715363">
+    <state x="540" y="280" key="AndroidCreateResourceFileDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598727404032" />
+    <state x="818" y="332" key="AndroidCreateXmlResourceDialog" timestamp="1598728531387">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="818" y="332" key="AndroidCreateXmlResourceDialog/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1596898715363" />
+    <state x="818" y="332" key="AndroidCreateXmlResourceDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598728531387" />
     <state x="815" y="283" key="AndroidProcessChooserDialog" timestamp="1596998330160">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="815" y="283" key="AndroidProcessChooserDialog/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1596998330160" />
+    <state x="574" y="47" key="CommitChangelistDialog2" timestamp="1598790286798">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="574" y="47" key="CommitChangelistDialog2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598790286798" />
+    <state x="574" y="48" key="CommitChangelistDialog2/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1598715529340" />
     <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1597654600060">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -266,22 +355,30 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="824" y="419" key="Github.ShareDialog/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1597654613935" />
-    <state width="1877" height="172" key="GridCell.Tab.0.bottom" timestamp="1597653242673">
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1598782632483">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="172" key="GridCell.Tab.0.bottom/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1597653242673" />
-    <state width="1877" height="172" key="GridCell.Tab.0.center" timestamp="1597653242673">
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598782632483" />
+    <state width="1877" height="417" key="GridCell.Tab.0.bottom/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1598716672331" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1598782632482">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="172" key="GridCell.Tab.0.center/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1597653242673" />
-    <state width="1877" height="172" key="GridCell.Tab.0.left" timestamp="1597653242672">
+    <state width="1877" height="295" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598782632482" />
+    <state width="1877" height="417" key="GridCell.Tab.0.center/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1598716672331" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1598782632482">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="172" key="GridCell.Tab.0.left/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1597653242672" />
-    <state width="1877" height="172" key="GridCell.Tab.0.right" timestamp="1597653242673">
+    <state width="1877" height="295" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598782632482" />
+    <state width="1877" height="417" key="GridCell.Tab.0.left/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1598716672331" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1598782632483">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="172" key="GridCell.Tab.0.right/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1597653242673" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598782632483" />
+    <state width="1877" height="417" key="GridCell.Tab.0.right/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1598716672331" />
     <state width="1877" height="318" key="GridCell.Tab.1.bottom" timestamp="1597590292815">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -302,10 +399,15 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="167" key="SettingsEditor/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1596992971805" />
-    <state x="-1416" y="340" width="1382" height="840" maximized="true" key="dock-window-1" timestamp="1596827922903">
-      <screen x="-1366" y="313" width="1366" height="738" />
+    <state x="832" y="191" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1598790326939">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="832" y="191" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598790326939" />
+    <state x="-1514" y="0" width="1530" height="1031" key="dock-window-1" timestamp="1598779095419">
+      <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state x="-1416" y="340" width="1382" height="840" maximized="true" key="dock-window-1/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1596827922903" />
+    <state x="-1514" y="0" width="1530" height="1031" key="dock-window-1/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598779095419" />
     <state x="701" y="163" key="refactoring.ChangeSignatureDialog" timestamp="1596999198521">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -314,22 +416,19 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1596994433423" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1597654305582">
+    <state x="623" y="227" width="672" height="679" key="search.everywhere.popup" timestamp="1598784581822">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/-1366.313.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1597654305582" />
+    <state x="623" y="227" width="672" height="679" key="search.everywhere.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1598784581822" />
+    <state x="623" y="233" width="672" height="698" key="search.everywhere.popup/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1598709443121" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/krs/reducekrs/ReduceKrsFragment.kt</url>
-          <line>68</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/inn/mroyek/bismillahsiakad/presentation/ui/krs/reducekrs/ReduceKrsPresenter.kt</url>
-          <line>18</line>
+          <line>21</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

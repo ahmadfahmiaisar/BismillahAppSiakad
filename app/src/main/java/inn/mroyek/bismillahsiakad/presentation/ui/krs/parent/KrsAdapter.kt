@@ -23,6 +23,8 @@ class KrsAdapter (
         view.tv_dosen.text = krs?.ruang
         view.tv_jam.text = krs?.jam
         view.tv_ket.text = krs?.keterangan
+
+        //TODO ini dosen malah jadi ruang, cek lagi isinya
     }
 
     override fun getLayout(): Int = R.layout.krs
