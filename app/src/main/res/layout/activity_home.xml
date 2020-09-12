@@ -45,8 +45,8 @@
             android:layout_width="@dimen/_18sdp"
             android:layout_height="@dimen/_18sdp"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/ic_logout"
             android:onClick="logout"
+            android:src="@drawable/ic_logout"
             app:layout_constraintBottom_toBottomOf="@id/toolbar"
             app:layout_constraintEnd_toEndOf="@id/toolbar"
             app:layout_constraintTop_toTopOf="@id/toolbar" />
@@ -57,12 +57,52 @@
         layout="@layout/profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_mahasiswa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="iv_krs, iv_dhs, iv_khs, iv_more, textView2, textView3, textView4, textView5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_dosen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="iv_nilai, tv_nilai"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_nilai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile"
+        app:srcCompat="@drawable/ic_dhs" />
+
+    <TextView
+        android:id="@+id/tv_nilai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/productsans_regular"
+        android:text="Input Nilai"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_nilai"
+        app:layout_constraintStart_toStartOf="@+id/iv_nilai"
+        app:layout_constraintTop_toBottomOf="@+id/batas" />
 
     <ImageView
         android:id="@+id/iv_krs"
@@ -85,7 +125,7 @@
         app:srcCompat="@drawable/ic_dhs" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/iv_khs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -96,7 +136,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/iv_more"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -148,8 +188,8 @@
         android:text="KHS"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/_14ssp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView6"
-        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="@+id/iv_khs"
+        app:layout_constraintStart_toStartOf="@+id/iv_khs"
         app:layout_constraintTop_toBottomOf="@+id/batas" />
 
     <TextView
@@ -160,11 +200,12 @@
         android:text="More"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/_14ssp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView7"
-        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="@+id/iv_more"
+        app:layout_constraintStart_toStartOf="@+id/iv_more"
         app:layout_constraintTop_toBottomOf="@+id/batas" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_dashboard_mahasiswa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -434,8 +475,8 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:paddingBottom="@dimen/_10sdp"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_10sdp">
 
                 <TextView
                     android:layout_width="match_parent"

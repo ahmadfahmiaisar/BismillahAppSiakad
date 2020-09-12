@@ -9,6 +9,7 @@ import inn.mroyek.bismillahsiakad.MySiakad.Companion.pref
 import inn.mroyek.bismillahsiakad.R
 import inn.mroyek.bismillahsiakad.presentation.model.User
 import inn.mroyek.bismillahsiakad.presentation.ui.dhs.DhsActivity
+import inn.mroyek.bismillahsiakad.presentation.ui.inputnilai.InputNilaiActivity
 import inn.mroyek.bismillahsiakad.presentation.ui.krs.parent.KrsActivity
 import inn.mroyek.bismillahsiakad.presentation.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_home.*
@@ -42,6 +43,9 @@ class HomeActivity : AppCompatActivity(), HomeContract {
         iv_dhs.setOnClickListener {
             startActivity(Intent(this, DhsActivity::class.java))
         }
+        iv_nilai.setOnClickListener {
+            startActivity(Intent(this, InputNilaiActivity::class.java))
+        }
     }
 
     override fun getUser(user: User?) {
@@ -49,6 +53,15 @@ class HomeActivity : AppCompatActivity(), HomeContract {
         tv_nim.text = user?.username
         tv_prodi.text = user?.prodi
         tv_email.text = user?.email
+
+        if (user?.roles?.contains("dosen")!!){
+            group_mahasiswa.visibility = View.INVISIBLE
+            layout_dashboard_mahasiswa.visibility = View.INVISIBLE
+            group_dosen.visibility = View.VISIBLE
+        } else {
+            group_mahasiswa.visibility = View.VISIBLE
+            layout_dashboard_mahasiswa.visibility = View.VISIBLE
+        }
     }
 
     fun logout(view: View) {

@@ -22,4 +22,7 @@
     <string name="tahun">Tahun</string>
     <string name="huruf">Huruf</string>
     <string name="bobot_nilai">Bobot Nilai</string>
+    <string name="nim">NIM</string>
+    <string name="nama">NAMA</string>
+    <string name="nilai">NILAI</string>
 </resources>
