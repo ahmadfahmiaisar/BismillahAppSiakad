@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Bismillah SIakad</string>
+    <string name="copyright">Prototype Aplikasi Siakad Universitas Negeri Yogyakarta</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="update_krs">Update Krs</string>
+    <string name="krs">KRS</string>
+    <string name="krs_kartu_rencana_studi">KRS (Kartu Rencana Studi)</string>
+    <string name="edit">Edit</string>
+    <string name="add_krs">Add Krs</string>
+    <string name="reduce_krs">Reduce Krs</string>
+    <string name="no">No</string>
+    <string name="kode_matkul">Kode Matkul</string>
+    <string name="nama_matkul">Nama Matkul</string>
+    <string name="semester">Semester</string>
+    <string name="sks">SKS</string>
+    <string name="rombel">Rombel</string>
+    <string name="dosen">Dosen</string>
+    <string name="ket">Ket</string>
+    <string name="ruang">Ruang</string>
+    <string name="jam">Jam</string>
+    <string name="tahun">Tahun</string>
+    <string name="huruf">Huruf</string>
+    <string name="bobot_nilai">Bobot Nilai</string>
+    <string name="nim">NIM</string>
+    <string name="nama">NAMA</string>
+    <string name="nilai">NILAI</string>
+</resources>
