@@ -6,6 +6,9 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.GroupieViewHolder
 import dagger.android.AndroidInjection
 import inn.mroyek.bismillahsiakad.R
 import inn.mroyek.bismillahsiakad.common.logD
@@ -19,6 +22,8 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract {
     @Inject
     lateinit var presenter: InputNilaiPresenter
 
+    private val adapterInputNilai = GroupAdapter<GroupieViewHolder>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
@@ -26,13 +31,27 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract {
         presenter.bind(this)
 
         presenter.getAllMatkul()
+
+        setupRecycleView()
+    }
+
+    private fun setupRecycleView() {
+        rv_inputnilai.apply {
+            layoutManager = LinearLayoutManager(this@InputNilaiActivity)
+            adapter = adapterInputNilai
+        }
     }
 
     override fun getDhsbyMatkul(listDhs: List<ListDhs>) {
-
+        adapterInputNilai.clear()
+        listDhs.forEach {
+            adapterInputNilai.add(InputNilaiAdapter(it))
+        }
+        adapterInputNilai.notifyDataSetChanged()
     }
 
     override fun getAllMatkul(listmatkul: List<ListMatkul>) {
+        logD("ISINYA", "$listmatkul")
         val listMatkulnya = mutableListOf<String>()
         listmatkul.forEach {
             listMatkulnya.add(it.namaMatkul)
@@ -42,7 +61,7 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract {
         spinner.adapter = adapter
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                presenter.getDhsByMatkul( listmatkul[p2].kodeMatkul.toInt())
+                presenter.getDhsByMatkul(listmatkul[p2].id_matkul.toInt())
                 Toast.makeText(
                     this@InputNilaiActivity,
                     "kepilih nih si ${listMatkulnya[p2]}",

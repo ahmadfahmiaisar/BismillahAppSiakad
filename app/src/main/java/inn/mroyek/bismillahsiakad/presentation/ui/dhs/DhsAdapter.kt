@@ -13,7 +13,7 @@ class DhsAdapter (
     @SuppressLint("SetTextI18n")
     override fun bind(viewHolder: GroupieViewHolder, position: Int) {
         val view = viewHolder.itemView
-        view.tv_no.text = "$position + 1"
+        view.tv_no.text = "${position + 1}"
         view.kode_matkul.text = dhs?.kodeMatkul
         view.nama_matkul.text = dhs?.namaMatkul
         view.sks.text = dhs?.totalSks
