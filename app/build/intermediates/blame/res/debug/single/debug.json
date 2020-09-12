@@ -916,6 +916,10 @@
         "source": "C:\\Users\\Ahmad Fahmi Aisar\\.gradle\\caches\\transforms-2\\files-2.1\\1e26be71f35f7d459c113e2da2642d4b\\appcompat-1.1.0\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
+        "merged": "D:\\skripsi\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_input.xml.flat",
+        "source": "D:\\skripsi\\app\\src\\main\\res\\layout\\activity_input.xml"
+    },
+    {
         "merged": "D:\\skripsi\\app\\build\\intermediates\\res\\merged\\debug\\layout_mtrl_picker_fullscreen.xml.flat",
         "source": "C:\\Users\\Ahmad Fahmi Aisar\\.gradle\\caches\\transforms-2\\files-2.1\\3b8bf299aca9b803a4c285aa848f7919\\material-1.2.0-alpha06\\res\\layout\\mtrl_picker_fullscreen.xml"
     },
@@ -1390,6 +1394,10 @@
     {
         "merged": "D:\\skripsi\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mtrl_tabs_default_indicator.xml.flat",
         "source": "C:\\Users\\Ahmad Fahmi Aisar\\.gradle\\caches\\transforms-2\\files-2.1\\3b8bf299aca9b803a4c285aa848f7919\\material-1.2.0-alpha06\\res\\drawable\\mtrl_tabs_default_indicator.xml"
+    },
+    {
+        "merged": "D:\\skripsi\\app\\build\\intermediates\\res\\merged\\debug\\layout_input_nilai.xml.flat",
+        "source": "D:\\skripsi\\app\\src\\main\\res\\layout\\input_nilai.xml"
     },
     {
         "merged": "D:\\skripsi\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_lines_media.xml.flat",

@@ -2380,6 +2380,8 @@ id give_us_a_review_landmine_text_2
 id glide_custom_view_target_tag
 id gone
 id group_divider
+id group_dosen
+id group_mahasiswa
 id groups
 id guideline
 id guideline2
@@ -2401,20 +2403,22 @@ id ifRoom
 id image
 id imageView
 id imageView2
-id imageView6
-id imageView7
 id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
 id iv_dhs
+id iv_khs
 id iv_krs
 id iv_logout
+id iv_more
+id iv_nilai
 id jam
 id ket
 id kode_matkul
 id labeled
 id largeLabel
+id layout_dashboard_mahasiswa
 id left
 id line1
 id line3
@@ -2453,9 +2457,12 @@ id mtrl_picker_text_input_range_end
 id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id multiply
+id nama_mahasiswa
 id nama_matkul
 id navigation_header_container
 id never
+id nilai
+id nim_mahasiswa
 id no
 id noScroll
 id none
@@ -2492,6 +2499,7 @@ id row_index_key
 id ruang
 id rv_add_krs
 id rv_dhs
+id rv_inputnilai
 id rv_krs
 id rv_reduce_krs
 id save_non_transition_alpha
@@ -2529,6 +2537,7 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
+id spinner
 id split_action_bar
 id spread
 id spread_inside
@@ -2572,6 +2581,7 @@ id textView3
 id textView4
 id textView5
 id textView6
+id textView7
 id textView8
 id textView9
 id textWatcher
@@ -2603,6 +2613,7 @@ id tv_ket
 id tv_kode_matkul
 id tv_nama
 id tv_nama_matkul
+id tv_nilai
 id tv_nim
 id tv_no
 id tv_prodi
@@ -2684,6 +2695,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_dhs
 layout activity_home
+layout activity_input
 layout activity_krs
 layout activity_login
 layout custom_dialog
@@ -2705,6 +2717,7 @@ layout design_text_input_start_icon
 layout dp_example
 layout fragment_add_krs
 layout fragment_reduce_krs
+layout input_nilai
 layout insert_and_reduce_krs
 layout item_dhs
 layout krs
@@ -2864,7 +2877,10 @@ string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string mtrl_slider_range_content_description
+string nama
 string nama_matkul
+string nilai
+string nim
 string no
 string password_toggle_content_description
 string path_password_eye

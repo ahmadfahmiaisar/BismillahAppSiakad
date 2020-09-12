@@ -31,6 +31,7 @@ import inn.mroyek.bismillahsiakad.data.service.KrsService;
 import inn.mroyek.bismillahsiakad.data.service.UserService;
 import inn.mroyek.bismillahsiakad.di.module.ActivityModule_DhsActivity;
 import inn.mroyek.bismillahsiakad.di.module.ActivityModule_HomeActivity;
+import inn.mroyek.bismillahsiakad.di.module.ActivityModule_InputActivity;
 import inn.mroyek.bismillahsiakad.di.module.ActivityModule_KrsActivity;
 import inn.mroyek.bismillahsiakad.di.module.ActivityModule_LoginActivity;
 import inn.mroyek.bismillahsiakad.di.module.FragmentModule_AddKrsFragment;
@@ -46,6 +47,9 @@ import inn.mroyek.bismillahsiakad.presentation.ui.dhs.DhsPresenter;
 import inn.mroyek.bismillahsiakad.presentation.ui.home.HomeActivity;
 import inn.mroyek.bismillahsiakad.presentation.ui.home.HomeActivity_MembersInjector;
 import inn.mroyek.bismillahsiakad.presentation.ui.home.HomePresenter;
+import inn.mroyek.bismillahsiakad.presentation.ui.inputnilai.InputNilaiActivity;
+import inn.mroyek.bismillahsiakad.presentation.ui.inputnilai.InputNilaiActivity_MembersInjector;
+import inn.mroyek.bismillahsiakad.presentation.ui.inputnilai.InputNilaiPresenter;
 import inn.mroyek.bismillahsiakad.presentation.ui.krs.addkrs.AddKrsFragment;
 import inn.mroyek.bismillahsiakad.presentation.ui.krs.addkrs.AddKrsFragment_MembersInjector;
 import inn.mroyek.bismillahsiakad.presentation.ui.krs.addkrs.AddKrsPresenter;
@@ -77,6 +81,9 @@ public final class DaggerAppComponent implements AppComponent {
   private Provider<ActivityModule_DhsActivity.DhsActivitySubcomponent.Builder>
       dhsActivitySubcomponentBuilderProvider;
 
+  private Provider<ActivityModule_InputActivity.InputNilaiActivitySubcomponent.Builder>
+      inputNilaiActivitySubcomponentBuilderProvider;
+
   private Provider<FragmentModule_ReduceKrsFragment.ReduceKrsFragmentSubcomponent.Builder>
       reduceKrsFragmentSubcomponentBuilderProvider;
 
@@ -106,11 +113,12 @@ public final class DaggerAppComponent implements AppComponent {
 
   private Map<Class<?>, Provider<AndroidInjector.Factory<?>>>
       getMapOfClassOfAndProviderOfFactoryOf() {
-    return MapBuilder.<Class<?>, Provider<AndroidInjector.Factory<?>>>newMapBuilder(6)
+    return MapBuilder.<Class<?>, Provider<AndroidInjector.Factory<?>>>newMapBuilder(7)
         .put(LoginActivity.class, (Provider) loginActivitySubcomponentBuilderProvider)
         .put(HomeActivity.class, (Provider) homeActivitySubcomponentBuilderProvider)
         .put(KrsActivity.class, (Provider) krsActivitySubcomponentBuilderProvider)
         .put(DhsActivity.class, (Provider) dhsActivitySubcomponentBuilderProvider)
+        .put(InputNilaiActivity.class, (Provider) inputNilaiActivitySubcomponentBuilderProvider)
         .put(ReduceKrsFragment.class, (Provider) reduceKrsFragmentSubcomponentBuilderProvider)
         .put(AddKrsFragment.class, (Provider) addKrsFragmentSubcomponentBuilderProvider)
         .build();
@@ -156,6 +164,13 @@ public final class DaggerAppComponent implements AppComponent {
           @Override
           public ActivityModule_DhsActivity.DhsActivitySubcomponent.Builder get() {
             return new DhsActivitySubcomponentBuilder();
+          }
+        };
+    this.inputNilaiActivitySubcomponentBuilderProvider =
+        new Provider<ActivityModule_InputActivity.InputNilaiActivitySubcomponent.Builder>() {
+          @Override
+          public ActivityModule_InputActivity.InputNilaiActivitySubcomponent.Builder get() {
+            return new InputNilaiActivitySubcomponentBuilder();
           }
         };
     this.reduceKrsFragmentSubcomponentBuilderProvider =
@@ -402,6 +417,53 @@ public final class DaggerAppComponent implements AppComponent {
 
     private DhsActivity injectDhsActivity(DhsActivity instance) {
       DhsActivity_MembersInjector.injectPresenter(instance, getDhsPresenter());
+      return instance;
+    }
+  }
+
+  private final class InputNilaiActivitySubcomponentBuilder
+      extends ActivityModule_InputActivity.InputNilaiActivitySubcomponent.Builder {
+    private InputNilaiActivity seedInstance;
+
+    @Override
+    public ActivityModule_InputActivity.InputNilaiActivitySubcomponent build() {
+      Preconditions.checkBuilderRequirement(seedInstance, InputNilaiActivity.class);
+      return new InputNilaiActivitySubcomponentImpl(this);
+    }
+
+    @Override
+    public void seedInstance(InputNilaiActivity arg0) {
+      this.seedInstance = Preconditions.checkNotNull(arg0);
+    }
+  }
+
+  private final class InputNilaiActivitySubcomponentImpl
+      implements ActivityModule_InputActivity.InputNilaiActivitySubcomponent {
+    private Provider<DhsRepository> dhsRepositoryProvider;
+
+    private InputNilaiActivitySubcomponentImpl(InputNilaiActivitySubcomponentBuilder builder) {
+
+      initialize(builder);
+    }
+
+    private InputNilaiPresenter getInputNilaiPresenter() {
+      return new InputNilaiPresenter(dhsRepositoryProvider.get());
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initialize(final InputNilaiActivitySubcomponentBuilder builder) {
+      this.dhsRepositoryProvider =
+          SingleCheck.provider(
+              DhsRepository_Factory.create(DaggerAppComponent.this.provideDhsServiceProvider));
+    }
+
+    @Override
+    public void inject(InputNilaiActivity arg0) {
+      injectInputNilaiActivity(arg0);
+    }
+
+    private InputNilaiActivity injectInputNilaiActivity(InputNilaiActivity instance) {
+      InputNilaiActivity_MembersInjector.injectPresenter(instance, getInputNilaiPresenter());
       return instance;
     }
   }

@@ -22,6 +22,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="inn.mroyek.bismillahsiakad.presentation.ui.inputnilai.InputNilaiActivity" />
         <activity android:name="inn.mroyek.bismillahsiakad.presentation.ui.dhs.DhsActivity" />
         <activity android:name="inn.mroyek.bismillahsiakad.presentation.ui.krs.parent.KrsActivity" />
         <activity android:name="inn.mroyek.bismillahsiakad.presentation.ui.home.HomeActivity" >

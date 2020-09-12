@@ -1,14 +1,14 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml:2:1-31:12
+ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml:2:1-32:12
 MERGED from [androidx.databinding:databinding-adapters:3.5.3] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\a09fc27c7e3c5ea097c85ffed6786878\databinding-adapters-3.5.3\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.databinding:databinding-runtime:3.5.3] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\6e94000b21df94e9fe526889d9d7897a\databinding-runtime-3.5.3\AndroidManifest.xml:17:1-24:12
 MERGED from [com.xwray:groupie-kotlin-android-extensions:2.7.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\54964ce9b75acc4042c9a86b3a0eb823\groupie-kotlin-android-extensions-2.7.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.material:material:1.2.0-alpha06] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\3b8bf299aca9b803a4c285aa848f7919\material-1.2.0-alpha06\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.dagger:dagger-android-support:2.20] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\6e809a6cb8f1a9a83e1b18f2332d4e47\jetified-dagger-android-support-2.20\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.dagger:dagger-android-support:2.20] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\686d3ff33a1cef2a2932e07bdaf2eb3c\jetified-dagger-android-support-2.20\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\1e26be71f35f7d459c113e2da2642d4b\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-ktx:1.3.1] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\808af33db7b397d5c8a80f8ed9c08841\core-ktx-1.3.1\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\c00897a75935c57de9f8625a7c89903f\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
@@ -17,10 +17,10 @@ MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] C:\Users\Ahmad Fahmi Aisar\.g
 MERGED from [com.intuit.sdp:sdp-android:1.0.6] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\d04715c05bb42e86876d82800b851258\sdp-android-1.0.6\AndroidManifest.xml:2:1-11:12
 MERGED from [com.intuit.ssp:ssp-android:1.0.6] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\33f4277d4970b48aab7986bf76f5d1f8\ssp-android-1.0.6\AndroidManifest.xml:2:1-11:12
 MERGED from [com.daimajia.easing:library:2.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\8da8b5ede0354939c0cd1adcd0c9eeb4\library-2.0\AndroidManifest.xml:2:1-12:12
-MERGED from [com.daimajia.androidanimations:library:2.3] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\2c9d9b14bf7ffe7d2fb690ed3fcdd564\jetified-library-2.3\AndroidManifest.xml:2:1-12:12
+MERGED from [com.daimajia.androidanimations:library:2.3] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\c256b93089234a67b1a0fa6d628928a3\jetified-library-2.3\AndroidManifest.xml:2:1-12:12
 MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\eb6bab06a5183672fc33cefcea35210d\glide-4.10.0\AndroidManifest.xml:2:1-12:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\bb2166ce9e58b9a22b4552f8df48ccf2\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.dagger:dagger-android:2.20] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\52ec1b719fbdd41becff55cf9c517572\jetified-dagger-android-2.20\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.dagger:dagger-android:2.20] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\b16012a23e47e62de551ef02ce5ca9f9\jetified-dagger-android-2.20\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\3a6f46922bba9518f6a04dc8bf3da7eb\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\0158ad962e3d4dce1350222504ca5bc4\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\300585be0084c74373eb79498ea51109\appcompat-resources-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -56,22 +56,22 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Ahmad Fahmi A
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\e72024cd7ec7fd551b0e782ea8498119\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\91bee30dc875af5d02b1859a205d2bb6\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\e7ce15f771d5b701eead2be667060bb5\annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml:2:1-32:12
 	package
 		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:4:5-41
 		INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml
 		INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml
-		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:2:1-31:12
+		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:2:1-32:12
 		INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml
-		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:2:1-31:12
+		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:2:1-32:12
 		INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:2:11-69
@@ -80,7 +80,7 @@ ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:6:5-67
 	android:name
 		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:6:22-64
 application
-ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:8:5-29:19
+ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:8:5-30:19
 MERGED from [com.google.android.material:material:1.2.0-alpha06] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\3b8bf299aca9b803a4c285aa848f7919\material-1.2.0-alpha06\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.2.0-alpha06] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\3b8bf299aca9b803a4c285aa848f7919\material-1.2.0-alpha06\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\c00897a75935c57de9f8625a7c89903f\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
@@ -117,32 +117,36 @@ MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] C:\Users\Ahmad Fahmi A
 		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:13:9-60
 	android:name
 		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:9:9-33
+activity#inn.mroyek.bismillahsiakad.presentation.ui.inputnilai.InputNilaiActivity
+ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:19:9-92
+	android:name
+		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:19:19-80
 activity#inn.mroyek.bismillahsiakad.presentation.ui.dhs.DhsActivity
-ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:19:9-78
+ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:20:9-69
 	android:name
-		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:19:19-66
+		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:20:19-66
 activity#inn.mroyek.bismillahsiakad.presentation.ui.krs.parent.KrsActivity
-ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:20:9-76
+ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:21:9-76
 	android:name
-		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:20:19-73
+		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:21:19-73
 activity#inn.mroyek.bismillahsiakad.presentation.ui.home.HomeActivity
-ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:21:9-27:20
+ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:22:9-28:20
 	android:name
-		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:21:19-68
+		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:22:19-68
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:22:13-26:29
+ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:23:13-27:29
 action#android.intent.action.MAIN
-ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:23:17-69
+ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:24:17-69
 	android:name
-		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:23:25-66
+		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:24:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:25:17-77
+ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:26:17-77
 	android:name
-		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:25:27-74
+		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:26:27-74
 activity#inn.mroyek.bismillahsiakad.presentation.ui.login.LoginActivity
-ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:28:9-73
+ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:29:9-73
 	android:name
-		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:28:19-70
+		ADDED from D:\skripsi\app\src\main\AndroidManifest.xml:29:19-70
 uses-sdk
 INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\skripsi\app\src\main\AndroidManifest.xml
@@ -155,8 +159,8 @@ MERGED from [com.xwray:groupie-kotlin-android-extensions:2.7.0] C:\Users\Ahmad F
 MERGED from [com.xwray:groupie-kotlin-android-extensions:2.7.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\54964ce9b75acc4042c9a86b3a0eb823\groupie-kotlin-android-extensions-2.7.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.material:material:1.2.0-alpha06] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\3b8bf299aca9b803a4c285aa848f7919\material-1.2.0-alpha06\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.2.0-alpha06] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\3b8bf299aca9b803a4c285aa848f7919\material-1.2.0-alpha06\AndroidManifest.xml:20:5-44
-MERGED from [com.google.dagger:dagger-android-support:2.20] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\6e809a6cb8f1a9a83e1b18f2332d4e47\jetified-dagger-android-support-2.20\AndroidManifest.xml:20:5-44
-MERGED from [com.google.dagger:dagger-android-support:2.20] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\6e809a6cb8f1a9a83e1b18f2332d4e47\jetified-dagger-android-support-2.20\AndroidManifest.xml:20:5-44
+MERGED from [com.google.dagger:dagger-android-support:2.20] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\686d3ff33a1cef2a2932e07bdaf2eb3c\jetified-dagger-android-support-2.20\AndroidManifest.xml:20:5-44
+MERGED from [com.google.dagger:dagger-android-support:2.20] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\686d3ff33a1cef2a2932e07bdaf2eb3c\jetified-dagger-android-support-2.20\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\1e26be71f35f7d459c113e2da2642d4b\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\1e26be71f35f7d459c113e2da2642d4b\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core-ktx:1.3.1] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\808af33db7b397d5c8a80f8ed9c08841\core-ktx-1.3.1\AndroidManifest.xml:5:5-7:41
@@ -173,14 +177,14 @@ MERGED from [com.intuit.ssp:ssp-android:1.0.6] C:\Users\Ahmad Fahmi Aisar\.gradl
 MERGED from [com.intuit.ssp:ssp-android:1.0.6] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\33f4277d4970b48aab7986bf76f5d1f8\ssp-android-1.0.6\AndroidManifest.xml:7:5-9:41
 MERGED from [com.daimajia.easing:library:2.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\8da8b5ede0354939c0cd1adcd0c9eeb4\library-2.0\AndroidManifest.xml:8:5-10:41
 MERGED from [com.daimajia.easing:library:2.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\8da8b5ede0354939c0cd1adcd0c9eeb4\library-2.0\AndroidManifest.xml:8:5-10:41
-MERGED from [com.daimajia.androidanimations:library:2.3] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\2c9d9b14bf7ffe7d2fb690ed3fcdd564\jetified-library-2.3\AndroidManifest.xml:8:5-10:41
-MERGED from [com.daimajia.androidanimations:library:2.3] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\2c9d9b14bf7ffe7d2fb690ed3fcdd564\jetified-library-2.3\AndroidManifest.xml:8:5-10:41
+MERGED from [com.daimajia.androidanimations:library:2.3] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\c256b93089234a67b1a0fa6d628928a3\jetified-library-2.3\AndroidManifest.xml:8:5-10:41
+MERGED from [com.daimajia.androidanimations:library:2.3] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\c256b93089234a67b1a0fa6d628928a3\jetified-library-2.3\AndroidManifest.xml:8:5-10:41
 MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\eb6bab06a5183672fc33cefcea35210d\glide-4.10.0\AndroidManifest.xml:6:5-8:41
 MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\eb6bab06a5183672fc33cefcea35210d\glide-4.10.0\AndroidManifest.xml:6:5-8:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\bb2166ce9e58b9a22b4552f8df48ccf2\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\bb2166ce9e58b9a22b4552f8df48ccf2\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.dagger:dagger-android:2.20] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\52ec1b719fbdd41becff55cf9c517572\jetified-dagger-android-2.20\AndroidManifest.xml:20:5-44
-MERGED from [com.google.dagger:dagger-android:2.20] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\52ec1b719fbdd41becff55cf9c517572\jetified-dagger-android-2.20\AndroidManifest.xml:20:5-44
+MERGED from [com.google.dagger:dagger-android:2.20] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\b16012a23e47e62de551ef02ce5ca9f9\jetified-dagger-android-2.20\AndroidManifest.xml:20:5-44
+MERGED from [com.google.dagger:dagger-android:2.20] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\b16012a23e47e62de551ef02ce5ca9f9\jetified-dagger-android-2.20\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\3a6f46922bba9518f6a04dc8bf3da7eb\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\3a6f46922bba9518f6a04dc8bf3da7eb\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Ahmad Fahmi Aisar\.gradle\caches\transforms-2\files-2.1\0158ad962e3d4dce1350222504ca5bc4\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
