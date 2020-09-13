@@ -3,8 +3,8 @@ package inn.mroyek.bismillahsiakad.data.service
 import inn.mroyek.bismillahsiakad.data.response.AllMatkulResponse
 import inn.mroyek.bismillahsiakad.data.response.DhsResponse
 import io.reactivex.Flowable
-import retrofit2.http.GET
-import retrofit2.http.Path
+import io.reactivex.Observable
+import retrofit2.http.*
 
 interface DhsService {
 
@@ -16,4 +16,8 @@ interface DhsService {
 
     @GET("dhs/getallmatkul")
     fun getAllMatkul() : Flowable<AllMatkulResponse>
+
+    @FormUrlEncoded
+    @HTTP(method = "POST", path = "dhs/insertnilai/{idDhs}", hasBody = true)
+    fun postInputNilai(@Path("idDhs") idDhs: String?, @Field("huruf") huruf: String): Observable<String>
 }

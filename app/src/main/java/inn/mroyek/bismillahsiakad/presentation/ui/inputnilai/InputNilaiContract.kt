@@ -7,4 +7,5 @@ import inn.mroyek.bismillahsiakad.presentation.base.BaseView
 interface InputNilaiContract : BaseView {
     fun getDhsbyMatkul(listDhs: List<ListDhs>)
     fun getAllMatkul(listmatkul: List<ListMatkul>)
+    fun postInputNilai(response: String)
 }

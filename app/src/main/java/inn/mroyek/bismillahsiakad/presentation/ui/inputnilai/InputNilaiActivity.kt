@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xwray.groupie.GroupAdapter
@@ -17,7 +18,7 @@ import inn.mroyek.bismillahsiakad.data.response.DhsResponse.ListDhs
 import kotlinx.android.synthetic.main.activity_input.*
 import javax.inject.Inject
 
-class InputNilaiActivity : AppCompatActivity(), InputNilaiContract {
+class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAdapter.ItemSelected {
 
     @Inject
     lateinit var presenter: InputNilaiPresenter
@@ -45,7 +46,7 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract {
     override fun getDhsbyMatkul(listDhs: List<ListDhs>) {
         adapterInputNilai.clear()
         listDhs.forEach {
-            adapterInputNilai.add(InputNilaiAdapter(it))
+            adapterInputNilai.add(InputNilaiAdapter(it, this))
         }
         adapterInputNilai.notifyDataSetChanged()
     }
@@ -76,8 +77,31 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract {
         }
     }
 
+    override fun postInputNilai(response: String) {
+        toassin(response)
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         presenter.destroy()
+    }
+
+    override fun hasSelectedItem(idDhs: String) {
+        val listNilai = arrayOf("A+", "A", "A-", "B+","B", "B-", "C+", "C", "C-", "D", "E", "K")
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Pilih Nilai")
+        builder.setSingleChoiceItems(listNilai, -1) { _, i ->
+            presenter.postInputNilai(idDhs, listNilai[i])
+        }
+
+        builder.setPositiveButton("Submit") { _, _ ->
+        }
+
+        val alertDialog = builder.create()
+        alertDialog.show()
+    }
+
+    private fun toassin(message: String){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

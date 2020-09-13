@@ -5,6 +5,7 @@ import inn.mroyek.bismillahsiakad.data.response.AllMatkulResponse.ListMatkul
 import inn.mroyek.bismillahsiakad.data.response.DhsResponse.ListDhs
 import inn.mroyek.bismillahsiakad.data.service.DhsService
 import io.reactivex.Flowable
+import io.reactivex.Observable
 import javax.inject.Inject
 
 @Reusable
@@ -28,5 +29,10 @@ class DhsRepository @Inject constructor(private val service: DhsService) {
             .flatMap { Flowable.fromIterable(it.listMatkul) }
             .toList()
             .toFlowable()
+    }
+
+    fun postInputNilai(idDhs: String, huruf: String): Observable<String>{
+        return service.postInputNilai(idDhs, huruf)
+            .map { it }
     }
 }

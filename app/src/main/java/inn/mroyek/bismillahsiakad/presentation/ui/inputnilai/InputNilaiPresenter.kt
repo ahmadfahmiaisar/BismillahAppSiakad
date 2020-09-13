@@ -29,4 +29,15 @@ class InputNilaiPresenter @Inject constructor(private val repository: DhsReposit
                 }, Throwable::printStackTrace)
         )
     }
+
+    fun postInputNilai(idDhs: String, huruf: String){
+        disposable.add(
+            repository.postInputNilai(idDhs, huruf)
+                .observeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+                    view?.postInputNilai(it)
+                }, Throwable::printStackTrace)
+        )
+    }
 }
