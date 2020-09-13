@@ -58,6 +58,7 @@ class HomeActivity : AppCompatActivity(), HomeContract {
             group_mahasiswa.visibility = View.INVISIBLE
             layout_dashboard_mahasiswa.visibility = View.INVISIBLE
             group_dosen.visibility = View.VISIBLE
+            layout_dashboard_dosen.visibility = View.VISIBLE
         } else {
             group_mahasiswa.visibility = View.VISIBLE
             layout_dashboard_mahasiswa.visibility = View.VISIBLE

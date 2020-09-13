@@ -104,4 +104,6 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
     private fun toassin(message: String){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
+
+    fun goBack(view: View) {}
 }
