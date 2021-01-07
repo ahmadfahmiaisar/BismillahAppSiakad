@@ -5,6 +5,7 @@ import dagger.android.ContributesAndroidInjector
 import inn.mroyek.bismillahsiakad.presentation.ui.dhs.DhsActivity
 import inn.mroyek.bismillahsiakad.presentation.ui.home.HomeActivity
 import inn.mroyek.bismillahsiakad.presentation.ui.inputnilai.InputNilaiActivity
+import inn.mroyek.bismillahsiakad.presentation.ui.khs.KhsActivity
 import inn.mroyek.bismillahsiakad.presentation.ui.krs.parent.KrsActivity
 import inn.mroyek.bismillahsiakad.presentation.ui.login.LoginActivity
 
@@ -25,4 +26,7 @@ abstract class ActivityModule {
 
     @ContributesAndroidInjector
     abstract fun inputActivity() : InputNilaiActivity
+
+    @ContributesAndroidInjector
+    abstract fun khsActivity(): KhsActivity
 }

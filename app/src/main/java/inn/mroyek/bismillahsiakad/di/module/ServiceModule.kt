@@ -3,6 +3,7 @@ package inn.mroyek.bismillahsiakad.di.module
 import dagger.Module
 import dagger.Provides
 import inn.mroyek.bismillahsiakad.data.service.DhsService
+import inn.mroyek.bismillahsiakad.data.service.KhsService
 import inn.mroyek.bismillahsiakad.data.service.KrsService
 import inn.mroyek.bismillahsiakad.data.service.UserService
 import retrofit2.Retrofit
@@ -29,5 +30,12 @@ object ServiceModule {
     @Singleton
     fun provideDhsService(retrofit: Retrofit): DhsService = retrofit.create(
         DhsService::class.java
+    )
+
+    @JvmStatic
+    @Provides
+    @Singleton
+    fun provideKhsService(retrofit: Retrofit): KhsService = retrofit.create(
+        KhsService::class.java
     )
 }
