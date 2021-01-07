@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/productsans_bold"
-            android:text="@string/krs"
+            android:text="@string/dhs"
             android:textColor="#fff"
             android:textSize="@dimen/_20sdp"
             android:textStyle="bold"
@@ -85,7 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="@string/krs_kartu_rencana_studi"
+            android:text="@string/dokumen_hasil_studi_mahsiswa"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -212,6 +212,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/kode_matkul"
+                    app:layout_constraintVertical_bias="0.0"
                     tools:itemCount="20"
                     tools:listitem="@layout/item_dhs" />
 

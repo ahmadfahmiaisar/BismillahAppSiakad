@@ -10,11 +10,13 @@ class DhsPresenter @Inject constructor(private val repository: DhsRepository) :
     BasePresenter<DhsContract>() {
 
     fun getDhsByUsername(username: String?) {
+        view?.loading(true)
         disposable.add(
             repository.getDhsByUsername(username)
                 .observeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
+                    view?.loading(false)
                     view?.getDhs(it)
                 }, Throwable::printStackTrace)
         )

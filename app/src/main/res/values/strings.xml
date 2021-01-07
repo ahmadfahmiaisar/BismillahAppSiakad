@@ -25,4 +25,6 @@
     <string name="nim">NIM</string>
     <string name="nama">NAMA</string>
     <string name="nilai">NILAI</string>
+    <string name="dhs">DHS</string>
+    <string name="dokumen_hasil_studi_mahsiswa">Dokumen Hasil Studi Mahsiswa</string>
 </resources>

@@ -12,6 +12,8 @@ import inn.mroyek.bismillahsiakad.R
 import inn.mroyek.bismillahsiakad.data.response.DhsResponse.ListDhs
 import inn.mroyek.bismillahsiakad.presentation.model.User
 import kotlinx.android.synthetic.main.activity_dhs.*
+import kotlinx.android.synthetic.main.activity_dhs.pg_loading
+import kotlinx.android.synthetic.main.activity_krs.*
 import kotlinx.android.synthetic.main.profile.*
 import javax.inject.Inject
 
@@ -57,6 +59,10 @@ class DhsActivity : AppCompatActivity(), DhsContract {
             adapterDhs.add(DhsAdapter(it))
         }
         adapterDhs.notifyDataSetChanged()
+    }
+
+    override fun loading(loading: Boolean) {
+        pg_loading.visibility = if (loading) View.VISIBLE else View.GONE
     }
 
     override fun onDestroy() {
