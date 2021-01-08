@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cv_profile"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/shape"
-    android:backgroundTint="#fff">
+    android:backgroundTint="#fff"
+    android:paddingBottom="@dimen/_8sdp">
 
     <TextView
         android:id="@+id/tv_nama"
@@ -51,12 +53,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/poppins"
-        android:paddingBottom="8dp"
         android:text="ahmad.fahmi2016@student.uny.ac.id"
         android:textColor="#000"
         android:textSize="@dimen/_11ssp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_prodi" />
+
+    <TextView
+        android:id="@+id/tvIpk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textSize="@dimen/_11ssp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/tv_email"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email"
+        tools:text="IPK : 3.6"
+        tools:visibility="visible" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_photo_profile"

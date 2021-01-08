@@ -6,4 +6,5 @@ import inn.mroyek.bismillahsiakad.presentation.base.BaseView
 interface DhsContract : BaseView{
     fun getDhs(listdhs: List<ListDhs?>)
     fun loading(loading: Boolean)
+    fun countIpk(ipk: String)
 }

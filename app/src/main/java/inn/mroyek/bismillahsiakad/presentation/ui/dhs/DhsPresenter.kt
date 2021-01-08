@@ -21,4 +21,9 @@ class DhsPresenter @Inject constructor(private val repository: DhsRepository) :
                 }, Throwable::printStackTrace)
         )
     }
+
+    fun countIpk(totalNilai: Float, totalSks: Int) {
+        val ip = totalNilai / totalSks
+        
+    }
 }

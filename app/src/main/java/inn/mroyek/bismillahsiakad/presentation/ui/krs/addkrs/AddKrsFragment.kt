@@ -11,22 +11,25 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import dagger.android.support.AndroidSupportInjection
 import inn.mroyek.bismillahsiakad.R
-import inn.mroyek.bismillahsiakad.common.logD
 import inn.mroyek.bismillahsiakad.data.request.InsertKrsRequest
+import inn.mroyek.bismillahsiakad.data.response.AllKrsResponse
 import inn.mroyek.bismillahsiakad.data.response.MatkulResponse.ListMatkul
 import kotlinx.android.synthetic.main.fragment_add_krs.*
 import kotlinx.android.synthetic.main.fragment_add_krs.view.*
 import javax.inject.Inject
 
-class AddKrsFragment : BottomSheetDialogFragment(), AddKrsContract, AddKrsAdapter.ItemMatkulSelectedListener {
+class AddKrsFragment : BottomSheetDialogFragment(), AddKrsContract,
+    AddKrsAdapter.ItemMatkulSelectedListener {
 
     @Inject
     lateinit var presenter: AddKrsPresenter
 
     private val adapterAddKrs = GroupAdapter<GroupieViewHolder>()
 
+
     companion object {
         var requested = InsertKrsRequest()
+        val listFkMatkul: ArrayList<Int> = ArrayList()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,6 +45,11 @@ class AddKrsFragment : BottomSheetDialogFragment(), AddKrsContract, AddKrsAdapte
         presenter.bind(this)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_add_krs, container, false)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        presenter.getAllKrs()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -65,11 +73,20 @@ class AddKrsFragment : BottomSheetDialogFragment(), AddKrsContract, AddKrsAdapte
         Toast.makeText(context, response, Toast.LENGTH_LONG).show()
     }
 
+    override fun getAllKrs(listkrs: List<AllKrsResponse.AllKrs?>) {
+        listkrs.forEach {
+            listFkMatkul.add(it?.fkMatkul ?: 0)
+        }
+    }
+
     override fun onItemMatkulSelected(request: InsertKrsRequest) {
-        logD("isinyacok", "nyobainCok: $request")
-        btn_add_krs.setOnClickListener {
-            presenter.insertKrs(request)
-            dismiss()
+        if (request.any { it.fkMatkul in listFkMatkul }) {
+            Toast.makeText(requireActivity(), "item already exists", Toast.LENGTH_LONG).show()
+        } else {
+            btn_add_krs.setOnClickListener {
+                presenter.insertKrs(request)
+                dismiss()
+            }
         }
     }
 

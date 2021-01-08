@@ -65,6 +65,10 @@ class DhsActivity : AppCompatActivity(), DhsContract {
         pg_loading.visibility = if (loading) View.VISIBLE else View.GONE
     }
 
+    override fun countIpk(ipk: String) {
+        TODO("Not yet implemented")
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         presenter.destroy()

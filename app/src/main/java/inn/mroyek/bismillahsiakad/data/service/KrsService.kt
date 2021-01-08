@@ -2,6 +2,7 @@ package inn.mroyek.bismillahsiakad.data.service
 
 import inn.mroyek.bismillahsiakad.data.request.DeleteSomeKrsRequest
 import inn.mroyek.bismillahsiakad.data.request.InsertKrsRequest
+import inn.mroyek.bismillahsiakad.data.response.AllKrsResponse
 import inn.mroyek.bismillahsiakad.data.response.KrsResponse
 import inn.mroyek.bismillahsiakad.data.response.MatkulResponse
 import io.reactivex.Flowable
@@ -24,4 +25,7 @@ interface KrsService {
 
     @HTTP(method = "POST", path = "krs/insertkrs", hasBody = true)
     fun insertKrs(@Body insertKrsRequest: InsertKrsRequest) : Observable<String>
+
+    @GET("krs/getkrs")
+    fun getAllKrs(): Flowable<AllKrsResponse>
 }
