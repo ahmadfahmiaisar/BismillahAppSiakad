@@ -6,7 +6,7 @@ import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
 import inn.mroyek.bismillahsiakad.R
 import inn.mroyek.bismillahsiakad.data.response.KrsResponse.KrsResult
-import kotlinx.android.synthetic.main.krs.view.*
+import kotlinx.android.synthetic.main.item_krs.view.*
 
 class KrsAdapter (
     private val krs: KrsResult?
@@ -27,6 +27,6 @@ class KrsAdapter (
         //TODO ini dosen malah jadi ruang, cek lagi isinya
     }
 
-    override fun getLayout(): Int = R.layout.krs
+    override fun getLayout(): Int = R.layout.item_krs
 
 }

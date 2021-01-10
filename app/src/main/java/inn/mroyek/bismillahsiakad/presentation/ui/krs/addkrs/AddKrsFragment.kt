@@ -27,7 +27,6 @@ class AddKrsFragment : BottomSheetDialogFragment(), AddKrsContract,
     lateinit var presenter: AddKrsPresenter
 
     private val adapterAddKrs = GroupAdapter<GroupieViewHolder>()
-    private val sharPref = MySiakad.pref
 
     companion object {
         var requested = InsertKrsRequest()

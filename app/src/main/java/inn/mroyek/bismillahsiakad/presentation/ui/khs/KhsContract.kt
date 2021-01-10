@@ -5,4 +5,5 @@ import inn.mroyek.bismillahsiakad.presentation.base.BaseView
 
 interface KhsContract : BaseView{
     fun getKhs(listKhs: List<ListKhs>)
+    fun loading(loading: Boolean)
 }

@@ -59,18 +59,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_prodi" />
 
-    <TextView
-        android:id="@+id/tvIpk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:textSize="@dimen/_11ssp"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/tv_email"
-        app:layout_constraintTop_toBottomOf="@+id/tv_email"
-        tools:text="IPK : 3.6"
-        tools:visibility="visible" />
-
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_photo_profile"
         android:layout_width="@dimen/_60sdp"
