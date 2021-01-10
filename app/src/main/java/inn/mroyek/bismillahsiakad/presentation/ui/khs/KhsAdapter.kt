@@ -16,8 +16,8 @@ class KhsAdapter(
         view.tv_no.text = "${position + 1}"
         view.tv_kode_matkul.text = khs?.kodeMatkul
         view.tv_nama_matkul.text = khs?.namaMatkul
-        view.tv_sks.text = khs?.totalSks
-        view.tv_nilai.text = khs?.bobotNilai
+        view.tv_sks.text = khs?.totalSks.toString()
+        view.tv_nilai.text = khs?.huruf
     }
 
     override fun getLayout(): Int = R.layout.item_khs

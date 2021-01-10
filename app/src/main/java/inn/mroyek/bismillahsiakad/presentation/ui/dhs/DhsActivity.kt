@@ -9,6 +9,7 @@ import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import dagger.android.AndroidInjection
 import inn.mroyek.bismillahsiakad.MySiakad.Companion.pref
 import inn.mroyek.bismillahsiakad.R
+import inn.mroyek.bismillahsiakad.common.logD
 import inn.mroyek.bismillahsiakad.data.response.DhsResponse.ListDhs
 import inn.mroyek.bismillahsiakad.presentation.model.User
 import kotlinx.android.synthetic.main.activity_dhs.*
@@ -66,7 +67,6 @@ class DhsActivity : AppCompatActivity(), DhsContract {
     }
 
     override fun countIpk(ipk: String) {
-        TODO("Not yet implemented")
     }
 
     override fun onDestroy() {

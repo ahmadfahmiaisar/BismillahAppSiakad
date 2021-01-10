@@ -9,7 +9,7 @@ data class KhsResponse(
 ) {
     data class ListKhs(
         @SerializedName("bobot_nilai")
-        val bobotNilai: String,
+        val bobotNilai: Int,
         @SerializedName("huruf")
         val huruf: String,
         @SerializedName("kode_matkul")
@@ -21,9 +21,9 @@ data class KhsResponse(
         @SerializedName("prodi")
         val prodi: String,
         @SerializedName("semester")
-        val semester: String,
+        val semester: Int,
         @SerializedName("total_sks")
-        val totalSks: String,
+        val totalSks: Int,
         @SerializedName("username")
         val username: String
     )

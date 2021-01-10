@@ -1,6 +1,7 @@
 package inn.mroyek.bismillahsiakad.presentation.ui.khs
 
 import inn.mroyek.bismillahsiakad.data.repository.KhsRepository
+import inn.mroyek.bismillahsiakad.data.response.KhsResponse
 import inn.mroyek.bismillahsiakad.presentation.base.BasePresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -20,4 +21,5 @@ class KhsPresenter @Inject constructor(private val repository: KhsRepository) :
                 }, Throwable::printStackTrace)
         )
     }
+
 }

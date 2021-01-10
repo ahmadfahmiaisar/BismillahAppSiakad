@@ -1,5 +1,6 @@
 package inn.mroyek.bismillahsiakad.presentation.ui.khs
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,7 @@ import com.xwray.groupie.GroupieViewHolder
 import dagger.android.AndroidInjection
 import inn.mroyek.bismillahsiakad.MySiakad.Companion.pref
 import inn.mroyek.bismillahsiakad.R
+import inn.mroyek.bismillahsiakad.common.logD
 import inn.mroyek.bismillahsiakad.data.response.KhsResponse
 import inn.mroyek.bismillahsiakad.presentation.model.User
 import kotlinx.android.synthetic.main.activity_khs.*
@@ -42,6 +44,7 @@ class KhsActivity : AppCompatActivity(), KhsContract {
                 KhsAdapter(it)
             )
         }
+        countingIP(listKhs)
         adapterKhs.notifyDataSetChanged()
     }
 
@@ -68,7 +71,28 @@ class KhsActivity : AppCompatActivity(), KhsContract {
         pg_loading.visibility = if (loading) View.VISIBLE else View.GONE
     }
 
+
     fun goBack(view: View) {
         view.setOnClickListener { finish() }
+    }
+
+    private fun countingIP(khs: List<KhsResponse.ListKhs>) {
+        var countSks = 0
+        var countNilai = 0
+        var countIpk = 0
+        val semester = mutableListOf<Int>()
+        khs.forEach {
+            countSks += it.totalSks
+            countNilai += it.bobotNilai
+            semester.add(it.semester)
+        }
+        val countSemester = semester.max() ?: 0
+        val ip = countNilai / countSks
+        countIpk += ip
+        val ipk = countIpk / countSemester
+
+        logD("ISINYADATA", "$ip, $ipk, $countSemester, $countNilai, $countSks, $countIpk")
+        tvIP.text = "IP Semester : $ip"
+        tvIPK.text = "IPK : $ipk"
     }
 }
