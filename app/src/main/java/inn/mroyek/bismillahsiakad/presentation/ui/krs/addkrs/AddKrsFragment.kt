@@ -10,7 +10,9 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import dagger.android.support.AndroidSupportInjection
+import inn.mroyek.bismillahsiakad.MySiakad
 import inn.mroyek.bismillahsiakad.R
+import inn.mroyek.bismillahsiakad.common.logD
 import inn.mroyek.bismillahsiakad.data.request.InsertKrsRequest
 import inn.mroyek.bismillahsiakad.data.response.AllKrsResponse
 import inn.mroyek.bismillahsiakad.data.response.MatkulResponse.ListMatkul
@@ -25,11 +27,12 @@ class AddKrsFragment : BottomSheetDialogFragment(), AddKrsContract,
     lateinit var presenter: AddKrsPresenter
 
     private val adapterAddKrs = GroupAdapter<GroupieViewHolder>()
-
+    private val sharPref = MySiakad.pref
 
     companion object {
         var requested = InsertKrsRequest()
         val listFkMatkul: ArrayList<Int> = ArrayList()
+        val listFkUser: ArrayList<Int> = ArrayList()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,11 +79,13 @@ class AddKrsFragment : BottomSheetDialogFragment(), AddKrsContract,
     override fun getAllKrs(listkrs: List<AllKrsResponse.AllKrs?>) {
         listkrs.forEach {
             listFkMatkul.add(it?.fkMatkul ?: 0)
+            listFkUser.add(it?.fkUser ?: 0)
         }
     }
 
     override fun onItemMatkulSelected(request: InsertKrsRequest) {
-        if (request.any { it.fkMatkul in listFkMatkul }) {
+
+        if (request.any { it.fkUser in listFkUser } && request.any { it.fkMatkul in listFkMatkul }) {
             Toast.makeText(requireActivity(), "item already exists", Toast.LENGTH_LONG).show()
         } else {
             btn_add_krs.setOnClickListener {
@@ -93,6 +98,8 @@ class AddKrsFragment : BottomSheetDialogFragment(), AddKrsContract,
     override fun onDestroy() {
         presenter.destroy()
         requested.clear()
+        listFkMatkul.clear()
+        listFkUser.clear()
         super.onDestroy()
     }
 }

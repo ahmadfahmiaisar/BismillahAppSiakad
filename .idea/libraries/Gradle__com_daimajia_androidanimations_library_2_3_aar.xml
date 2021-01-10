@@ -1,11 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.daimajia.androidanimations:library:2.3@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/646f524fbc9f4447c41262cd5008570e/jetified-library-2.3/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/646f524fbc9f4447c41262cd5008570e/jetified-library-2.3/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/646f524fbc9f4447c41262cd5008570e/jetified-library-2.3/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/947253e86e52dbf86578593576b7c3d7/jetified-library-2.3/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/947253e86e52dbf86578593576b7c3d7/jetified-library-2.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/947253e86e52dbf86578593576b7c3d7/jetified-library-2.3/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/947253e86e52dbf86578593576b7c3d7/jetified-library-2.3/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
