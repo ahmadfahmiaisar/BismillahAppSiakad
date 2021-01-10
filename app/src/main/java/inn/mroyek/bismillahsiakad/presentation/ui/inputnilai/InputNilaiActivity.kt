@@ -24,6 +24,7 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
     lateinit var presenter: InputNilaiPresenter
 
     private val adapterInputNilai = GroupAdapter<GroupieViewHolder>()
+    private var matkul = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -63,6 +64,7 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 presenter.getDhsByMatkul(listmatkul[p2].id_matkul.toInt())
+                matkul = listmatkul[p2].id_matkul.toInt()
                 Toast.makeText(
                     this@InputNilaiActivity,
                     "kepilih nih si ${listMatkulnya[p2]}",
@@ -95,6 +97,7 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
         }
 
         builder.setPositiveButton("Submit") { _, _ ->
+            presenter.getDhsByMatkul(matkul)
         }
 
         val alertDialog = builder.create()

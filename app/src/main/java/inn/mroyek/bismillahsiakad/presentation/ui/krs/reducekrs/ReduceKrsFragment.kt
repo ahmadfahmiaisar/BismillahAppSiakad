@@ -21,13 +21,12 @@ import kotlinx.android.synthetic.main.fragment_reduce_krs.*
 import kotlinx.android.synthetic.main.fragment_reduce_krs.view.*
 import javax.inject.Inject
 
-class ReduceKrsFragment : BottomSheetDialogFragment(), ReduceKrsContract, ReduceKrsAdapter.ItemKrsSelectedListener {
+class ReduceKrsFragment(private val listener: ShouldRefreshListener) : BottomSheetDialogFragment(), ReduceKrsContract,
+    ReduceKrsAdapter.ItemKrsSelectedListener {
 
     @Inject
     lateinit var presenter: ReduceKrsPresenter
-
     private val sharePref = pref
-
     private val adapterKrs = GroupAdapter<GroupieViewHolder>()
 
     companion object {
@@ -85,8 +84,12 @@ class ReduceKrsFragment : BottomSheetDialogFragment(), ReduceKrsContract, Reduce
         btn_reduce_krs.setOnClickListener {
             presenter.reduceSomeKrs(request)
             Toast.makeText(context, "hm", Toast.LENGTH_SHORT).show()
+            listener.onRefreshing()
             dismiss()
         }
     }
 
+    interface ShouldRefreshListener {
+        fun onRefreshing()
+    }
 }

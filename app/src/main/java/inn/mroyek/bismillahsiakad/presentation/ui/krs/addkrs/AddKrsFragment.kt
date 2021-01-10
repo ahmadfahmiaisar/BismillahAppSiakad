@@ -16,11 +16,12 @@ import inn.mroyek.bismillahsiakad.common.logD
 import inn.mroyek.bismillahsiakad.data.request.InsertKrsRequest
 import inn.mroyek.bismillahsiakad.data.response.AllKrsResponse
 import inn.mroyek.bismillahsiakad.data.response.MatkulResponse.ListMatkul
+import inn.mroyek.bismillahsiakad.presentation.ui.krs.reducekrs.ReduceKrsFragment
 import kotlinx.android.synthetic.main.fragment_add_krs.*
 import kotlinx.android.synthetic.main.fragment_add_krs.view.*
 import javax.inject.Inject
 
-class AddKrsFragment : BottomSheetDialogFragment(), AddKrsContract,
+class AddKrsFragment(private val listener: ShouldRefreshListener) : BottomSheetDialogFragment(), AddKrsContract,
     AddKrsAdapter.ItemMatkulSelectedListener {
 
     @Inject
@@ -89,6 +90,7 @@ class AddKrsFragment : BottomSheetDialogFragment(), AddKrsContract,
         } else {
             btn_add_krs.setOnClickListener {
                 presenter.insertKrs(request)
+                listener.onRefreshing()
                 dismiss()
             }
         }
@@ -100,5 +102,8 @@ class AddKrsFragment : BottomSheetDialogFragment(), AddKrsContract,
         listFkMatkul.clear()
         listFkUser.clear()
         super.onDestroy()
+    }
+    interface ShouldRefreshListener {
+        fun onRefreshing()
     }
 }

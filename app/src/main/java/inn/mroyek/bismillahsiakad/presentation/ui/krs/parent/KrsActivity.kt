@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.fragment_add_krs.*
 import kotlinx.android.synthetic.main.profile.*
 import javax.inject.Inject
 
-class KrsActivity : AppCompatActivity(),
+class KrsActivity : AppCompatActivity(), ReduceKrsFragment.ShouldRefreshListener, AddKrsFragment.ShouldRefreshListener,
     KrsContract {
 
     @Inject
@@ -46,15 +46,22 @@ class KrsActivity : AppCompatActivity(),
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_krs)
-
         presenter.bind(this)
         presenter.getKrsbyUser(sharPref.user.username)
 //        presenter.getKrsbyUser("12345")
         setUiProfile(sharPref.user)
         initRv()
 
-        bottomSheetReduceKrsFragment = ReduceKrsFragment()
-        bottomSheetAddKrsFragment = AddKrsFragment()
+        bottomSheetReduceKrsFragment = ReduceKrsFragment(this)
+        bottomSheetAddKrsFragment = AddKrsFragment(this)
+        swipeRefresh()
+    }
+
+    private fun swipeRefresh() {
+        swipeRefreshKrs.setOnRefreshListener {
+            presenter.getKrsbyUser(sharPref.user.username)
+            swipeRefreshKrs.isRefreshing = false
+        }
     }
 
     private fun initRv() {
@@ -128,4 +135,7 @@ class KrsActivity : AppCompatActivity(),
         }
     }
 
+    override fun onRefreshing() {
+        presenter.getKrsbyUser(sharPref.user.username)
+    }
 }
