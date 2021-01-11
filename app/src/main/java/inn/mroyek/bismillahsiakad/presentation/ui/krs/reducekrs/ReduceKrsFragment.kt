@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.fragment_reduce_krs.view.*
 import javax.inject.Inject
 
 class ReduceKrsFragment(private val listener: ShouldRefreshListener) : BottomSheetDialogFragment(), ReduceKrsContract,
-    ReduceKrsAdapter.ItemKrsSelectedListener {
+        ReduceKrsAdapter.ItemKrsSelectedListener {
 
     @Inject
     lateinit var presenter: ReduceKrsPresenter
@@ -40,8 +40,8 @@ class ReduceKrsFragment(private val listener: ShouldRefreshListener) : BottomShe
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         presenter.bind(this)
         // Inflate the layout for this fragment
@@ -79,11 +79,9 @@ class ReduceKrsFragment(private val listener: ShouldRefreshListener) : BottomShe
     }
 
     override fun onItemKrsSelected(request: DeleteSomeKrsRequest) {
-        logD("isinyacok", "nyobainCok: $request")
 
         btn_reduce_krs.setOnClickListener {
             presenter.reduceSomeKrs(request)
-            Toast.makeText(context, "hm", Toast.LENGTH_SHORT).show()
             listener.onRefreshing()
             dismiss()
         }

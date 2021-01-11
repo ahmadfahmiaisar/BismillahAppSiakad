@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import dagger.android.AndroidInjection
 import inn.mroyek.bismillahsiakad.MySiakad.Companion.pref
 import inn.mroyek.bismillahsiakad.R
+import inn.mroyek.bismillahsiakad.common.loadImageStr
 import inn.mroyek.bismillahsiakad.presentation.model.User
 import inn.mroyek.bismillahsiakad.presentation.ui.dhs.DhsActivity
 import inn.mroyek.bismillahsiakad.presentation.ui.inputnilai.InputNilaiActivity
@@ -57,6 +58,7 @@ class HomeActivity : AppCompatActivity(), HomeContract {
         tv_nim.text = user?.username
         tv_prodi.text = user?.prodi
         tv_email.text = user?.email
+        ivPhotoProfile.loadImageStr(user?.picture)
 
         if (user?.roles?.contains("dosen")!!){
             group_mahasiswa.visibility = View.INVISIBLE

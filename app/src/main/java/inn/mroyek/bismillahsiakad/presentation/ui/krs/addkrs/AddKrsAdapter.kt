@@ -25,7 +25,8 @@ class AddKrsAdapter (
         view.tv_semester.text = listMatkul?.semester
         view.tv_sks.text = listMatkul?.totalSks
         view.tv_rombel.text = listMatkul?.rombel
-        view.tv_dosen.text = listMatkul?.ruang
+        view.tv_dosen.text = listMatkul?.namadosen
+        view.tv_ruang.text = listMatkul?.ruang
         view.tv_jam.text = listMatkul?.jam
         view.tv_ket.text = listMatkul?.keterangan
 

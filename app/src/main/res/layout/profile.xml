@@ -11,17 +11,18 @@
 
     <TextView
         android:id="@+id/tv_nama"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/poppins"
-        android:text="Ahmad Fahmi Aisar"
         android:textColor="#000"
-        android:textSize="@dimen/_16ssp"
+        android:textSize="@dimen/_14ssp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/cv_photo_profile"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Ahmad Fahmi Aisar" />
 
     <TextView
         android:id="@+id/tv_nim"
@@ -29,11 +30,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/poppins"
-        android:text="16520241006"
         android:textColor="#000"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_nama" />
+        app:layout_constraintTop_toBottomOf="@id/tv_nama"
+        tools:text="16520241006" />
 
     <TextView
         android:id="@+id/tv_prodi"
@@ -41,11 +42,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/poppins"
-        android:text="Pend. Teknik Informatika -S1"
         android:textColor="#000"
         android:textSize="@dimen/_11ssp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_nim" />
+        app:layout_constraintTop_toBottomOf="@id/tv_nim"
+        tools:text="Pend. Teknik Informatika -S1" />
 
     <TextView
         android:id="@+id/tv_email"
@@ -53,11 +54,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/poppins"
-        android:text="ahmad.fahmi2016@student.uny.ac.id"
         android:textColor="#000"
         android:textSize="@dimen/_11ssp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_prodi" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_prodi"
+        tools:text="ahmad.fahmi2016@student.uny.ac.id" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_photo_profile"
@@ -69,9 +70,10 @@
         app:layout_constraintTop_toTopOf="@+id/tv_nama">
 
         <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivPhotoProfile"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/aisar" />
+            tools:srcCompat="@drawable/aisar" />
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

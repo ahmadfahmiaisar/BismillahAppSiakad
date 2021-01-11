@@ -20,11 +20,11 @@ class KrsAdapter (
         view.tv_semester.text = krs?.semester
         view.tv_sks.text = krs?.totalSks
         view.tv_rombel.text = krs?.rombel
-        view.tv_dosen.text = krs?.ruang
+        view.tv_dosen.text = krs?.namadosen
+        view.tv_ruang.text = krs?.ruang
         view.tv_jam.text = krs?.jam
         view.tv_ket.text = krs?.keterangan
 
-        //TODO ini dosen malah jadi ruang, cek lagi isinya
     }
 
     override fun getLayout(): Int = R.layout.item_krs

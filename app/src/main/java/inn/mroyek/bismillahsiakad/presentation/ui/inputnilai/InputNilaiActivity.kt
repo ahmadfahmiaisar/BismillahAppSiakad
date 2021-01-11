@@ -59,16 +59,16 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
             listMatkulnya.add(it.namaMatkul)
         }
         val adapter =
-            ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listMatkulnya)
+                ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listMatkulnya)
         spinner.adapter = adapter
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 presenter.getDhsByMatkul(listmatkul[p2].id_matkul.toInt())
                 matkul = listmatkul[p2].id_matkul.toInt()
                 Toast.makeText(
-                    this@InputNilaiActivity,
-                    "kepilih nih si ${listMatkulnya[p2]}",
-                    Toast.LENGTH_LONG
+                        this@InputNilaiActivity,
+                        "kepilih nih si ${listMatkulnya[p2]}",
+                        Toast.LENGTH_LONG
                 ).show()
             }
 
@@ -89,7 +89,7 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
     }
 
     override fun hasSelectedItem(idDhs: String) {
-        val listNilai = arrayOf("A+", "A", "A-", "B+","B", "B-", "C+", "C", "C-", "D", "E", "K")
+        val listNilai = arrayOf("A", "A-", "B+", "B", "B-", "C+", "C", "D", "E", "K")
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Pilih Nilai")
         builder.setSingleChoiceItems(listNilai, -1) { _, i ->
@@ -104,7 +104,7 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
         alertDialog.show()
     }
 
-    private fun toassin(message: String){
+    private fun toassin(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
