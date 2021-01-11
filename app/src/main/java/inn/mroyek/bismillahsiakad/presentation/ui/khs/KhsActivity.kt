@@ -12,6 +12,7 @@ import com.xwray.groupie.GroupieViewHolder
 import dagger.android.AndroidInjection
 import inn.mroyek.bismillahsiakad.MySiakad.Companion.pref
 import inn.mroyek.bismillahsiakad.R
+import inn.mroyek.bismillahsiakad.common.loadImageStr
 import inn.mroyek.bismillahsiakad.common.logD
 import inn.mroyek.bismillahsiakad.data.response.KhsResponse
 import inn.mroyek.bismillahsiakad.presentation.model.User
@@ -40,7 +41,7 @@ class KhsActivity : AppCompatActivity(), KhsContract {
     }
 
     private fun setupSpinner() {
-        val listSemester = listOf("1", "2", "3", "4", "5", "6", "7", "8")
+        val listSemester = listOf("pilih disini", "1", "2", "3", "4", "5", "6", "7", "8")
         val adapterSpinner = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listSemester)
         spinner.adapter = adapterSpinner
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -72,6 +73,7 @@ class KhsActivity : AppCompatActivity(), KhsContract {
         tv_nim.text = user.username
         tv_prodi.text = user.prodi
         tv_email.text = user.email
+        ivPhotoProfile.loadImageStr(user.picture)
     }
 
     private fun initRecycleView() {

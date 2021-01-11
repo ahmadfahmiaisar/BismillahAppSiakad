@@ -11,6 +11,7 @@ import com.xwray.groupie.GroupieViewHolder
 import dagger.android.AndroidInjection
 import inn.mroyek.bismillahsiakad.MySiakad.Companion.pref
 import inn.mroyek.bismillahsiakad.R
+import inn.mroyek.bismillahsiakad.common.loadImageStr
 import inn.mroyek.bismillahsiakad.common.logD
 import inn.mroyek.bismillahsiakad.data.response.KrsResponse.KrsResult
 import inn.mroyek.bismillahsiakad.presentation.model.User
@@ -76,6 +77,7 @@ class KrsActivity : AppCompatActivity(), ReduceKrsFragment.ShouldRefreshListener
         tv_nim.text = user.username
         tv_prodi.text = user.prodi
         tv_email.text = user.email
+        ivPhotoProfile.loadImageStr(user.picture)
     }
 
     override fun getKrs(listKrs: List<KrsResult?>) {

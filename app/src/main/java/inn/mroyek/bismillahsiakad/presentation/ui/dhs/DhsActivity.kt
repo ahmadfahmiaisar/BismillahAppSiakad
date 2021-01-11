@@ -9,7 +9,7 @@ import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import dagger.android.AndroidInjection
 import inn.mroyek.bismillahsiakad.MySiakad.Companion.pref
 import inn.mroyek.bismillahsiakad.R
-import inn.mroyek.bismillahsiakad.common.logD
+import inn.mroyek.bismillahsiakad.common.loadImageStr
 import inn.mroyek.bismillahsiakad.data.response.DhsResponse.ListDhs
 import inn.mroyek.bismillahsiakad.presentation.model.User
 import kotlinx.android.synthetic.main.activity_dhs.*
@@ -50,9 +50,10 @@ class DhsActivity : AppCompatActivity(), DhsContract {
         tv_nim.text = user.username
         tv_prodi.text = user.prodi
         tv_email.text = user.email
+        ivPhotoProfile.loadImageStr(user.picture)
     }
 
-    fun goBack(view: View) {}
+    fun goBack(view: View) { view.setOnClickListener { finish() }}
 
     override fun getDhs(listdhs: List<ListDhs?>) {
         adapterDhs.clear()

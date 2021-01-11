@@ -53,23 +53,16 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
     }
 
     override fun getAllMatkul(listmatkul: List<ListMatkul>) {
-        logD("ISINYA", "$listmatkul")
         val listMatkulnya = mutableListOf<String>()
         listmatkul.forEach {
             listMatkulnya.add(it.namaMatkul)
         }
-        val adapter =
-                ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listMatkulnya)
+        val adapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listMatkulnya)
         spinner.adapter = adapter
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 presenter.getDhsByMatkul(listmatkul[p2].id_matkul.toInt())
                 matkul = listmatkul[p2].id_matkul.toInt()
-                Toast.makeText(
-                        this@InputNilaiActivity,
-                        "kepilih nih si ${listMatkulnya[p2]}",
-                        Toast.LENGTH_LONG
-                ).show()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
