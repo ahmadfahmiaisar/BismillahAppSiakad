@@ -73,7 +73,7 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
-                Toast.makeText(this@InputNilaiActivity, "pilih dulu", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@InputNilaiActivity, "pilih matkulnya dulu", Toast.LENGTH_LONG).show()
             }
 
         }

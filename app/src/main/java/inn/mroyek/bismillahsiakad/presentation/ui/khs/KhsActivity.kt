@@ -1,8 +1,10 @@
 package inn.mroyek.bismillahsiakad.presentation.ui.khs
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xwray.groupie.GroupAdapter
@@ -32,8 +34,25 @@ class KhsActivity : AppCompatActivity(), KhsContract {
         setContentView(R.layout.activity_khs)
         presenter.bind(this)
         setUiProfile(sharPref.user)
-        iniRv()
-        presenter.getKhs(sharPref.user.username, "4")
+        setupSpinner()
+        initRecycleView()
+
+    }
+
+    private fun setupSpinner() {
+        val listSemester = listOf("1", "2", "3", "4", "5", "6", "7", "8")
+        val adapterSpinner = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listSemester)
+        spinner.adapter = adapterSpinner
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                presenter.getKhs(sharPref.user.username, listSemester[p2])
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                Toast.makeText(this@KhsActivity, "pilih semester dulu", Toast.LENGTH_LONG).show()
+            }
+        }
+
     }
 
 
@@ -41,7 +60,7 @@ class KhsActivity : AppCompatActivity(), KhsContract {
         adapterKhs.clear()
         listKhs.forEach {
             adapterKhs.add(
-                KhsAdapter(it)
+                    KhsAdapter(it)
             )
         }
         countingIP(listKhs)
@@ -55,7 +74,7 @@ class KhsActivity : AppCompatActivity(), KhsContract {
         tv_email.text = user.email
     }
 
-    private fun iniRv() {
+    private fun initRecycleView() {
         rv_khs.apply {
             layoutManager = LinearLayoutManager(this@KhsActivity)
             adapter = adapterKhs
