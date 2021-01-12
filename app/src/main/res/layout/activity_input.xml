@@ -43,57 +43,27 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/tvTahunAjaran"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="Tahun Ajaran"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
     <Spinner
         android:id="@+id/spinnerTahunAjaran"
         android:layout_width="@dimen/_150sdp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/tvTahunAjaran"
-        app:layout_constraintTop_toBottomOf="@+id/tvTahunAjaran" />
-
-    <TextView
-        android:id="@+id/tvSemester"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="Semester"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerTahunAjaran" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <Spinner
         android:id="@+id/spinnerSemester"
         android:layout_width="@dimen/_150sdp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/tvSemester"
-        app:layout_constraintTop_toBottomOf="@+id/tvSemester" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="Mata Kuliah"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerSemester" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerTahunAjaran" />
 
     <Spinner
         android:id="@+id/spinnerMatkul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minWidth="@dimen/_150sdp"
-        app:layout_constraintStart_toStartOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerSemester" />
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"

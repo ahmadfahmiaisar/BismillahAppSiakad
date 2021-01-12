@@ -8,17 +8,17 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class KhsPresenter @Inject constructor(private val repository: KhsRepository) :
-    BasePresenter<KhsContract>() {
+        BasePresenter<KhsContract>() {
     fun getKhs(username: String?, semester: String?) {
         view?.loading(true)
         disposable.add(
-            repository.getkhs(username, semester)
-                .observeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({
-                    view?.loading(false)
-                    view?.getKhs(it)
-                }, Throwable::printStackTrace)
+                repository.getkhs(username, semester)
+                        .observeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe({
+                            view?.loading(false)
+                            view?.getKhs(it)
+                        }, Throwable::printStackTrace)
         )
     }
 

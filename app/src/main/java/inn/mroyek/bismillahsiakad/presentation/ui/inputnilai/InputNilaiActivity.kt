@@ -58,8 +58,10 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
     }
 
     private fun setupSpinner() {
-        val listSemester = listOf("1", "2", "3", "4", "5", "6", "7", "8")
-        val listTahunAjaran = listOf("2019", "2020", "2021")
+        val listSemester = listOf("pilih semester", "1", "2", "3", "4", "5", "6", "7", "8")
+        val listTahunAjaran = listOf("pilih tahun ajaran", "2019", "2020", "2021")
+        listNamaMatkul.add(0, "pilih mata kuliah")
+        listIdMatkul.add(0, "defaultvalue")
         val adapterSemester = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listSemester)
         val adapterTahunAjaran = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listTahunAjaran)
         val adapterMatkul = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listNamaMatkul)
@@ -70,7 +72,7 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
 
         spinnerTahunAjaran.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                tahunAjaran = listTahunAjaran[p2]
+                if (p2 > 0) tahunAjaran = listTahunAjaran[p2] else toastShort("pilih tahun ajaran")
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -80,7 +82,7 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
         }
         spinnerSemester.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                semester = listSemester[p2]
+                if (p2 > 0) semester = listSemester[p2] else toastShort("pilih semester")
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -90,8 +92,12 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
         }
         spinnerMatkul.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                idMatkul = listIdMatkul[p2]
-                presenter.getDhsByCategories(idMatkul, semester, tahunAjaran)
+                if (p2 > 0) {
+                    idMatkul = listIdMatkul[p2]
+                    presenter.getDhsByCategories(idMatkul, semester, tahunAjaran)
+                } else {
+                    toastShort("pilih mata kuliah")
+                }
 
             }
 

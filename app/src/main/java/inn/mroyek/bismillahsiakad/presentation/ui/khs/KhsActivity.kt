@@ -39,12 +39,17 @@ class KhsActivity : AppCompatActivity(), KhsContract {
     }
 
     private fun setupSpinner() {
-        val listSemester = listOf("pilih disini", "1", "2", "3", "4", "5", "6", "7", "8")
+        val listSemester = listOf("pilih semester", "1", "2", "3", "4", "5", "6", "7", "8")
         val adapterSpinner = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listSemester)
         spinner.adapter = adapterSpinner
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                presenter.getKhs(sharPref.user.username, listSemester[p2])
+                if (p2 > 0) {
+                    presenter.getKhs(sharPref.user.username, listSemester[p2])
+                } else {
+                    toastShort("pilih semester")
+                    pg_loading.visibility = View.GONE
+                }
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
