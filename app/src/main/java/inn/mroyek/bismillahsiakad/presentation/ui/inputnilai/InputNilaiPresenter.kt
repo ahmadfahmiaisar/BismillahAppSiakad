@@ -7,37 +7,38 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class InputNilaiPresenter @Inject constructor(private val repository: DhsRepository) :
-    BasePresenter<InputNilaiContract>() {
-    fun getDhsByMatkul(fkmatkul: Int?) {
+        BasePresenter<InputNilaiContract>() {
+
+    fun getDhsByCategories(fkmatkul: String?, semester: String?, tahun: String) {
         disposable.add(
-            repository.getDhsByMatkul(fkmatkul)
-                .observeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({
-                    view?.getDhsbyMatkul(it)
-                }, Throwable::printStackTrace)
+                repository.getDhsByCategories(fkmatkul, semester, tahun)
+                        .observeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe({
+                            view?.getDhsByCategories(it)
+                        }, Throwable::printStackTrace)
         )
     }
 
-    fun getAllMatkul(){
+    fun getAllMatkul() {
         disposable.add(
-            repository.getAllMatkul()
-                .observeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({
-                    view?.getAllMatkul(it)
-                }, Throwable::printStackTrace)
+                repository.getAllMatkul()
+                        .observeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe({
+                            view?.getAllMatkul(it)
+                        }, Throwable::printStackTrace)
         )
     }
 
-    fun postInputNilai(idDhs: String, huruf: String){
+    fun postInputNilai(idDhs: String, huruf: String) {
         disposable.add(
-            repository.postInputNilai(idDhs, huruf)
-                .observeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({
-                    view?.postInputNilai(it)
-                }, Throwable::printStackTrace)
+                repository.postInputNilai(idDhs, huruf)
+                        .observeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe({
+                            view?.postInputNilai(it)
+                        }, Throwable::printStackTrace)
         )
     }
 }

@@ -9,13 +9,14 @@ import retrofit2.http.*
 interface DhsService {
 
     @GET("dhs/getdhsbyusername/{username}")
-    fun getDhsByUsername(@Path("username") username: String?) : Flowable<DhsResponse>
+    fun getDhsByUsername(@Path("username") username: String?): Flowable<DhsResponse>
 
-    @GET("dhs/getdhsbymatkul/{fkmatkul}")
-    fun getDhsByMatkul(@Path("fkmatkul") fkmatkul: Int?) : Flowable<DhsResponse>
+    @FormUrlEncoded
+    @HTTP(method = "POST", path = "dhs/getdhsbysomecategories", hasBody = true)
+    fun getDhsByCategories(@Field("fkmatkul") fkmatkul: String?, @Field("semester") semester: String?, @Field("tahun") tahun: String?): Flowable<DhsResponse>
 
     @GET("dhs/getallmatkul")
-    fun getAllMatkul() : Flowable<AllMatkulResponse>
+    fun getAllMatkul(): Flowable<AllMatkulResponse>
 
     @FormUrlEncoded
     @HTTP(method = "POST", path = "dhs/insertnilai/{idDhs}", hasBody = true)

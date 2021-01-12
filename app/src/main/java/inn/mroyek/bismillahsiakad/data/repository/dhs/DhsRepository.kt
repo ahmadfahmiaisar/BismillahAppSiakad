@@ -12,27 +12,27 @@ import javax.inject.Inject
 class DhsRepository @Inject constructor(private val service: DhsService) {
     fun getDhsByUsername(username: String?): Flowable<MutableList<ListDhs>> {
         return service.getDhsByUsername(username)
-            .flatMap { Flowable.fromIterable(it.listDhs) }
-            .toList()
-            .toFlowable()
+                .flatMap { Flowable.fromIterable(it.listDhs) }
+                .toList()
+                .toFlowable()
     }
 
-    fun getDhsByMatkul(fkmatkul: Int?): Flowable<MutableList<ListDhs>>{
-        return service.getDhsByMatkul(fkmatkul)
-            .flatMap { Flowable.fromIterable(it.listDhs) }
-            .toList()
-            .toFlowable()
+    fun getDhsByCategories(fkMatkul: String?, semester: String?, tahun: String?): Flowable<MutableList<ListDhs>> {
+        return service.getDhsByCategories(fkMatkul, semester, tahun)
+                .flatMap { Flowable.fromIterable(it.listDhs) }
+                .toList()
+                .toFlowable()
     }
 
     fun getAllMatkul(): Flowable<MutableList<ListMatkul>> {
         return service.getAllMatkul()
-            .flatMap { Flowable.fromIterable(it.listMatkul) }
-            .toList()
-            .toFlowable()
+                .flatMap { Flowable.fromIterable(it.listMatkul) }
+                .toList()
+                .toFlowable()
     }
 
-    fun postInputNilai(idDhs: String, huruf: String): Observable<String>{
+    fun postInputNilai(idDhs: String, huruf: String): Observable<String> {
         return service.postInputNilai(idDhs, huruf)
-            .map { it }
+                .map { it }
     }
 }

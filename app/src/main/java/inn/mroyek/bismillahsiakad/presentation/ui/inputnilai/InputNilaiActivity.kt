@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,7 +11,6 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import dagger.android.AndroidInjection
 import inn.mroyek.bismillahsiakad.R
-import inn.mroyek.bismillahsiakad.common.logD
 import inn.mroyek.bismillahsiakad.common.toastShort
 import inn.mroyek.bismillahsiakad.data.response.AllMatkulResponse.ListMatkul
 import inn.mroyek.bismillahsiakad.data.response.DhsResponse.ListDhs
@@ -25,7 +23,11 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
     lateinit var presenter: InputNilaiPresenter
 
     private val adapterInputNilai = GroupAdapter<GroupieViewHolder>()
-    private var matkul = 0
+    private var idMatkul = "0"
+    private var tahunAjaran = "2020"
+    private var semester = "1"
+    private val listNamaMatkul = mutableListOf<String>()
+    private val listIdMatkul = mutableListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -38,14 +40,7 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
         setupRecycleView()
     }
 
-    private fun setupRecycleView() {
-        rv_inputnilai.apply {
-            layoutManager = LinearLayoutManager(this@InputNilaiActivity)
-            adapter = adapterInputNilai
-        }
-    }
-
-    override fun getDhsbyMatkul(listDhs: List<ListDhs>) {
+    override fun getDhsByCategories(listDhs: List<ListDhs>) {
         if (listDhs.isEmpty()) tvEmpty.visibility = View.VISIBLE else tvEmpty.visibility = View.GONE
         adapterInputNilai.clear()
         listDhs.forEach {
@@ -55,23 +50,57 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
     }
 
     override fun getAllMatkul(listmatkul: List<ListMatkul>) {
-        val listMatkulnya = mutableListOf<String>()
         listmatkul.forEach {
-            listMatkulnya.add(it.namaMatkul)
+            listNamaMatkul.add(it.namaMatkul)
+            listIdMatkul.add(it.id_matkul)
         }
-        val adapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listMatkulnya)
-        spinner.adapter = adapter
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        setupSpinner()
+    }
+
+    private fun setupSpinner() {
+        val listSemester = listOf("1", "2", "3", "4", "5", "6", "7", "8")
+        val listTahunAjaran = listOf("2019", "2020", "2021")
+        val adapterSemester = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listSemester)
+        val adapterTahunAjaran = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listTahunAjaran)
+        val adapterMatkul = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listNamaMatkul)
+
+        spinnerSemester.adapter = adapterSemester
+        spinnerTahunAjaran.adapter = adapterTahunAjaran
+        spinnerMatkul.adapter = adapterMatkul
+
+        spinnerTahunAjaran.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                presenter.getDhsByMatkul(listmatkul[p2].id_matkul.toInt())
-                matkul = listmatkul[p2].id_matkul.toInt()
+                tahunAjaran = listTahunAjaran[p2]
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
-                Toast.makeText(this@InputNilaiActivity, "pilih matkulnya dulu", Toast.LENGTH_LONG).show()
+                toastShort("pilih tahun ajaran dulu")
             }
 
         }
+        spinnerSemester.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                semester = listSemester[p2]
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                toastShort("pilih semester dulu")
+            }
+
+        }
+        spinnerMatkul.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                idMatkul = listIdMatkul[p2]
+                presenter.getDhsByCategories(idMatkul, semester, tahunAjaran)
+
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                toastShort("pilih matkulnya dulu")
+            }
+
+        }
+
     }
 
     override fun postInputNilai(response: String) {
@@ -91,7 +120,7 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
         }
 
         builder.setPositiveButton("Submit") { _, _ ->
-            presenter.getDhsByMatkul(matkul)
+            presenter.getDhsByCategories(idMatkul, semester, tahunAjaran)
             toastShort("nilai berhasil di inputkan")
         }
 
@@ -99,5 +128,14 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
         alertDialog.show()
     }
 
-    fun goBack(view: View) {view.setOnClickListener { finish() }}
+    private fun setupRecycleView() {
+        rv_inputnilai.apply {
+            layoutManager = LinearLayoutManager(this@InputNilaiActivity)
+            adapter = adapterInputNilai
+        }
+    }
+
+    fun goBack(view: View) {
+        view.setOnClickListener { finish() }
+    }
 }

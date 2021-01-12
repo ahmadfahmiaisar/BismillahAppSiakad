@@ -31,7 +31,7 @@ class AddKrsAdapter (
         view.tv_ket.text = listMatkul?.keterangan
 
         val request = AddKrsFragment.requested
-        val item = InsertKrsRequestItem(fkMatkul = listMatkul?.idMatkul!!.toInt(), fkUser = sharPref.user.idUser!!.toInt(), tahun = "2020")
+        val item = InsertKrsRequestItem(fkMatkul = listMatkul?.idMatkul!!.toInt(), fkUser = sharPref.user.idUser!!.toInt(), tahun = "2021")
         view.cb_itemkrs.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 request.add(item)
