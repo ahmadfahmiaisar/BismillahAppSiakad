@@ -45,6 +45,7 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
     }
 
     override fun getDhsbyMatkul(listDhs: List<ListDhs>) {
+        if (listDhs.isEmpty()) tvEmpty.visibility = View.VISIBLE else tvEmpty.visibility = View.GONE
         adapterInputNilai.clear()
         listDhs.forEach {
             adapterInputNilai.add(InputNilaiAdapter(it, this))

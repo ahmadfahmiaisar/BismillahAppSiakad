@@ -22,9 +22,7 @@ class DhsActivity : AppCompatActivity(), DhsContract {
 
     @Inject
     lateinit var presenter: DhsPresenter
-
     private val sharePref = pref
-
     private val adapterDhs = GroupAdapter<GroupieViewHolder>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
