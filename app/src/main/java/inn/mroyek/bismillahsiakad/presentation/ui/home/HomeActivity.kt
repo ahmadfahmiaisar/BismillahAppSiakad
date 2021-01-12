@@ -1,6 +1,7 @@
 package inn.mroyek.bismillahsiakad.presentation.ui.home
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -51,6 +52,9 @@ class HomeActivity : AppCompatActivity(), HomeContract {
         iv_khs.setOnClickListener {
             startActivity(Intent(this, KhsActivity::class.java))
         }
+        iv_more.setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://siakad2013.uny.ac.id/")))
+        }
     }
 
     override fun getUser(user: User?) {
@@ -60,7 +64,7 @@ class HomeActivity : AppCompatActivity(), HomeContract {
         tv_email.text = user?.email
         ivPhotoProfile.loadImageStr(user?.picture)
 
-        if (user?.roles?.contains("dosen")!!){
+        if (user?.roles?.contains("dosen")!!) {
             group_mahasiswa.visibility = View.INVISIBLE
             layout_dashboard_mahasiswa.visibility = View.INVISIBLE
             group_dosen.visibility = View.VISIBLE
