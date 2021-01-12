@@ -13,6 +13,7 @@ import dagger.android.support.AndroidSupportInjection
 import inn.mroyek.bismillahsiakad.MySiakad
 import inn.mroyek.bismillahsiakad.R
 import inn.mroyek.bismillahsiakad.common.logD
+import inn.mroyek.bismillahsiakad.common.toastLong
 import inn.mroyek.bismillahsiakad.data.request.InsertKrsRequest
 import inn.mroyek.bismillahsiakad.data.response.AllKrsResponse
 import inn.mroyek.bismillahsiakad.data.response.MatkulResponse.ListMatkul
@@ -84,8 +85,17 @@ class AddKrsFragment(private val listener: ShouldRefreshListener) : BottomSheetD
 
     override fun onItemMatkulSelected(request: InsertKrsRequest) {
 
-        if (request.any { it.fkUser in listFkUser } && request.any { it.fkMatkul in listFkMatkul }) {
-            Toast.makeText(requireActivity(), "item already exists", Toast.LENGTH_LONG).show()
+        logD("ISINYAPA", "user ${request.any { it.fkUser in listFkUser }} matkul ${request.any { it.fkMatkul in listFkMatkul }}")
+        if (request.any { it.fkUser in listFkUser }) {
+            if (request.any { it.fkMatkul in listFkMatkul }) {
+                requireActivity().toastLong("item already exists")
+            } else {
+                btn_add_krs.setOnClickListener {
+                    presenter.insertKrs(request)
+                    listener.onRefreshing()
+                    dismiss()
+                }
+            }
         } else {
             btn_add_krs.setOnClickListener {
                 presenter.insertKrs(request)
