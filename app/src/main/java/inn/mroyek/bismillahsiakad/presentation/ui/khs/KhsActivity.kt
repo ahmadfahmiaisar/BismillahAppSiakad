@@ -1,10 +1,10 @@
 package inn.mroyek.bismillahsiakad.presentation.ui.khs
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xwray.groupie.GroupAdapter
@@ -13,12 +13,10 @@ import dagger.android.AndroidInjection
 import inn.mroyek.bismillahsiakad.MySiakad.Companion.pref
 import inn.mroyek.bismillahsiakad.R
 import inn.mroyek.bismillahsiakad.common.loadImageStr
-import inn.mroyek.bismillahsiakad.common.logD
+import inn.mroyek.bismillahsiakad.common.toastShort
 import inn.mroyek.bismillahsiakad.data.response.KhsResponse
 import inn.mroyek.bismillahsiakad.presentation.model.User
 import kotlinx.android.synthetic.main.activity_khs.*
-import kotlinx.android.synthetic.main.activity_khs.pg_loading
-import kotlinx.android.synthetic.main.activity_krs.*
 import kotlinx.android.synthetic.main.profile.*
 import javax.inject.Inject
 
@@ -50,7 +48,7 @@ class KhsActivity : AppCompatActivity(), KhsContract {
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
-                Toast.makeText(this@KhsActivity, "pilih semester dulu", Toast.LENGTH_LONG).show()
+                toastShort("pilih semester dulu")
             }
         }
 
@@ -58,6 +56,7 @@ class KhsActivity : AppCompatActivity(), KhsContract {
 
 
     override fun getKhs(listKhs: List<KhsResponse.ListKhs>) {
+        if (listKhs.isEmpty()) tvEmpty.visibility = View.VISIBLE else tvEmpty.visibility = View.GONE
         adapterKhs.clear()
         listKhs.forEach {
             adapterKhs.add(
@@ -97,6 +96,7 @@ class KhsActivity : AppCompatActivity(), KhsContract {
         view.setOnClickListener { finish() }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun countingIP(khs: List<KhsResponse.ListKhs>) {
         var countSks = 0
         var countNilai = 0
@@ -112,7 +112,6 @@ class KhsActivity : AppCompatActivity(), KhsContract {
         countIpk += ip
         val ipk = countIpk / countSemester
 
-        logD("ISINYADATA", "$ip, $ipk, $countSemester, $countNilai, $countSks, $countIpk")
         tvIP.text = "IP Semester : $ip"
         tvIPK.text = "IPK : $ipk"
     }

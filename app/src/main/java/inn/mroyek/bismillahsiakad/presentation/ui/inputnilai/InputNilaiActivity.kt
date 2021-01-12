@@ -13,6 +13,7 @@ import com.xwray.groupie.GroupieViewHolder
 import dagger.android.AndroidInjection
 import inn.mroyek.bismillahsiakad.R
 import inn.mroyek.bismillahsiakad.common.logD
+import inn.mroyek.bismillahsiakad.common.toastShort
 import inn.mroyek.bismillahsiakad.data.response.AllMatkulResponse.ListMatkul
 import inn.mroyek.bismillahsiakad.data.response.DhsResponse.ListDhs
 import kotlinx.android.synthetic.main.activity_input.*
@@ -74,7 +75,6 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
     }
 
     override fun postInputNilai(response: String) {
-        toassin(response)
     }
 
     override fun onDestroy() {
@@ -92,15 +92,12 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
 
         builder.setPositiveButton("Submit") { _, _ ->
             presenter.getDhsByMatkul(matkul)
+            toastShort("nilai berhasil di inputkan")
         }
 
         val alertDialog = builder.create()
         alertDialog.show()
     }
 
-    private fun toassin(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
-    fun goBack(view: View) {}
+    fun goBack(view: View) {view.setOnClickListener { finish() }}
 }

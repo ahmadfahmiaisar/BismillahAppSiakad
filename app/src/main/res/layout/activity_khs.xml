@@ -103,6 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
+            android:text="IP Semester : "
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinner"
             tools:text="IP Semester : 3.9" />
@@ -113,6 +114,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
+            android:text="IPK : "
             app:layout_constraintStart_toEndOf="@+id/tvIP"
             app:layout_constraintTop_toBottomOf="@+id/spinner"
             tools:text="IPK 3.9" />
@@ -209,6 +211,16 @@
                     app:layout_constraintVertical_bias="0.0"
                     tools:itemCount="10"
                     tools:listitem="@layout/item_khs" />
+
+                <TextView
+                    android:id="@+id/tvEmpty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="belum ada semester yang di pilih atau di semester ini memang belum ada khs"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_khs"
+                    tools:visibility="visible" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline"

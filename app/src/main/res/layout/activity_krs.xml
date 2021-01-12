@@ -286,6 +286,16 @@
                         tools:itemCount="10"
                         tools:listitem="@layout/item_krs" />
 
+                    <TextView
+                        android:id="@+id/tvEmpty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="belum ada mahasiswa yang mengambil matkul ini"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rv_krs"
+                        tools:visibility="visible" />
+
                     <androidx.constraintlayout.widget.Guideline
                         android:id="@+id/guideline"
                         android:layout_width="wrap_content"

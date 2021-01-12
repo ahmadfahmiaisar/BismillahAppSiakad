@@ -18,13 +18,15 @@ import inn.mroyek.bismillahsiakad.presentation.model.User
 import inn.mroyek.bismillahsiakad.presentation.ui.krs.addkrs.AddKrsFragment
 import inn.mroyek.bismillahsiakad.presentation.ui.krs.reducekrs.ReduceKrsFragment
 import inn.mroyek.bismillahsiakad.presentation.ui.login.LoginActivity
+import kotlinx.android.synthetic.main.activity_input.*
 import kotlinx.android.synthetic.main.activity_krs.*
+import kotlinx.android.synthetic.main.activity_krs.tvEmpty
 import kotlinx.android.synthetic.main.fragment_add_krs.*
 import kotlinx.android.synthetic.main.profile.*
 import javax.inject.Inject
 
 class KrsActivity : AppCompatActivity(), ReduceKrsFragment.ShouldRefreshListener, AddKrsFragment.ShouldRefreshListener,
-    KrsContract {
+        KrsContract {
 
     @Inject
     lateinit var presenter: KrsPresenter
@@ -81,11 +83,11 @@ class KrsActivity : AppCompatActivity(), ReduceKrsFragment.ShouldRefreshListener
     }
 
     override fun getKrs(listKrs: List<KrsResult?>) {
-        logD("ISIKRS", Gson().toJson(listKrs))
+        if (listKrs.isEmpty()) tvEmpty.visibility = View.VISIBLE else tvEmpty.visibility = View.GONE
         adapterKrs.clear()
         listKrs.forEach {
             adapterKrs.add(
-                KrsAdapter(it)
+                    KrsAdapter(it)
             )
         }
         adapterKrs.notifyDataSetChanged()
@@ -107,8 +109,8 @@ class KrsActivity : AppCompatActivity(), ReduceKrsFragment.ShouldRefreshListener
     fun addKrs(view: View) {
         view.setOnClickListener {
             bottomSheetAddKrsFragment.show(
-                supportFragmentManager,
-                bottomSheetAddKrsFragment.tag
+                    supportFragmentManager,
+                    bottomSheetAddKrsFragment.tag
             )
         }
     }
@@ -116,8 +118,8 @@ class KrsActivity : AppCompatActivity(), ReduceKrsFragment.ShouldRefreshListener
     fun reduceKrs(view: View) {
         view.setOnClickListener {
             bottomSheetReduceKrsFragment.show(
-                supportFragmentManager,
-                bottomSheetReduceKrsFragment.tag
+                    supportFragmentManager,
+                    bottomSheetReduceKrsFragment.tag
             )
         }
     }
