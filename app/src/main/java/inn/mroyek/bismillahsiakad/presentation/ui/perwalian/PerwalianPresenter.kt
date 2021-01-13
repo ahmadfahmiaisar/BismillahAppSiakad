@@ -25,13 +25,11 @@ class PerwalianPresenter @Inject constructor(private val repository: KrsReposito
     }
 
     fun postStatusKrs(idKrs: String?, status: String?) {
-        view?.loading(true)
         disposable.add(
             repository.postStatusKrs(idKrs, status)
                 .observeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    view?.loading(false)
                     view?.postStatusKrs(it)
                 }, Throwable::printStackTrace)
         )

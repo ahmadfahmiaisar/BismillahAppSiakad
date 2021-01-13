@@ -7,10 +7,7 @@ import inn.mroyek.bismillahsiakad.data.response.KrsResponse
 import inn.mroyek.bismillahsiakad.data.response.MatkulResponse
 import io.reactivex.Flowable
 import io.reactivex.Observable
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.HTTP
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface KrsService {
     //Krs . get krs by username
@@ -29,6 +26,10 @@ interface KrsService {
     @GET("krs/getkrs")
     fun getAllKrs(): Flowable<AllKrsResponse>
 
+    @FormUrlEncoded
     @HTTP(method = "POST", path = "krs/poststatuskrs", hasBody = true)
-    fun postStatusKrs(idKrs: String?, status: String?): Observable<String>
+    fun postStatusKrs(
+        @Field("idkrs") idKrs: String?,
+        @Field("status") status: String?
+    ): Observable<String>
 }

@@ -50,10 +50,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        app:defaultQueryHint="masukan dulu nim mahasiswa disini"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:defaultQueryHint="masukan dulu nim mahasiswa disini" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <include
         android:id="@+id/profile"
@@ -207,12 +207,23 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_perwalian"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/nama_matkul"
                         tools:listitem="@layout/item_perwalian" />
+
+                    <TextView
+                        android:id="@+id/tvEmpty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="input nim mahasiswa dahulu"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rv_perwalian"
+                        tools:visibility="visible" />
 
                     <androidx.constraintlayout.widget.Guideline
                         android:id="@+id/guideline"
