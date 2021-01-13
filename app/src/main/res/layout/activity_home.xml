@@ -71,16 +71,18 @@
         android:visibility="visible"
         app:constraint_referenced_ids="iv_krs, iv_dhs, iv_khs, iv_more, textView2, textView3, textView4, textView5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="invisible" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group_dosen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"
-        app:constraint_referenced_ids="iv_nilai, tv_nilai"
+        app:constraint_referenced_ids="iv_nilai, tv_nilai, iv_accepted, tv_accepted"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/iv_nilai"
@@ -105,6 +107,27 @@
         app:layout_constraintTop_toBottomOf="@+id/batas" />
 
     <ImageView
+        android:id="@+id/iv_accepted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/iv_nilai"
+        app:layout_constraintTop_toTopOf="@+id/iv_nilai"
+        app:srcCompat="@drawable/ic_krs" />
+
+    <TextView
+        android:id="@+id/tv_accepted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/productsans_regular"
+        android:text="Accept KRS"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_accepted"
+        app:layout_constraintStart_toStartOf="@+id/iv_accepted"
+        app:layout_constraintTop_toBottomOf="@+id/batas" />
+
+    <ImageView
         android:id="@+id/iv_krs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -118,7 +141,7 @@
         android:id="@+id/iv_dhs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/iv_krs"
         app:layout_constraintTop_toBottomOf="@+id/profile"
@@ -133,7 +156,6 @@
         app:layout_constraintStart_toEndOf="@+id/iv_dhs"
         app:layout_constraintTop_toBottomOf="@+id/profile"
         app:srcCompat="@drawable/ic_khs" />
-
 
     <ImageView
         android:id="@+id/iv_more"
@@ -210,15 +232,16 @@
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:visibility="gone"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/shape"
         android:backgroundTint="#fff"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/textView12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:visibility="visible">
 
         <TextView
             android:id="@+id/textView13"
@@ -271,6 +294,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView15" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_dashboard_mahasiswa"
         android:layout_width="match_parent"
@@ -282,7 +306,8 @@
         android:backgroundTint="#fff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:visibility="gone">
 
         <TextView
             android:id="@+id/textView8"
