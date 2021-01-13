@@ -15,17 +15,20 @@ import retrofit2.http.Path
 interface KrsService {
     //Krs . get krs by username
     @GET("krs/getkrsbyusername/{username}")
-    fun getKrsbyUsername(@Path("username") username: String?) : Flowable<KrsResponse>
+    fun getKrsbyUsername(@Path("username") username: String?): Flowable<KrsResponse>
 
     @HTTP(method = "POST", path = "krs/deletesomekrs", hasBody = true)
-    fun deleteSomeKrs(@Body deleteSomeKrsRequest: DeleteSomeKrsRequest) : Observable<String>
+    fun deleteSomeKrs(@Body deleteSomeKrsRequest: DeleteSomeKrsRequest): Observable<String>
 
     @GET("krs/getmatkul")
-    fun getMatkul() : Flowable<MatkulResponse>
+    fun getMatkul(): Flowable<MatkulResponse>
 
     @HTTP(method = "POST", path = "krs/insertkrs", hasBody = true)
-    fun insertKrs(@Body insertKrsRequest: InsertKrsRequest) : Observable<String>
+    fun insertKrs(@Body insertKrsRequest: InsertKrsRequest): Observable<String>
 
     @GET("krs/getkrs")
     fun getAllKrs(): Flowable<AllKrsResponse>
+
+    @HTTP(method = "POST", path = "krs/poststatuskrs", hasBody = true)
+    fun postStatusKrs(idKrs: String?, status: String?): Observable<String>
 }

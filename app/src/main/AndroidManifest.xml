@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:name=".presentation.ui.perwalian.PerwalianActivity"></activity>
+        <activity android:name=".presentation.ui.perwalian.PerwalianActivity" />
         <activity android:name=".presentation.ui.khs.KhsActivity" />
         <activity android:name=".presentation.ui.inputnilai.InputNilaiActivity" />
         <activity android:name=".presentation.ui.dhs.DhsActivity" />

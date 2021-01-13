@@ -107,7 +107,7 @@
         app:layout_constraintTop_toBottomOf="@+id/batas" />
 
     <ImageView
-        android:id="@+id/iv_accepted"
+        android:id="@+id/iv_perwalian"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -116,15 +116,15 @@
         app:srcCompat="@drawable/ic_krs" />
 
     <TextView
-        android:id="@+id/tv_accepted"
+        android:id="@+id/tv_perwalian"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/productsans_regular"
-        android:text="Accept KRS"
+        android:text="Perwalian"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/_14ssp"
-        app:layout_constraintEnd_toEndOf="@+id/iv_accepted"
-        app:layout_constraintStart_toStartOf="@+id/iv_accepted"
+        app:layout_constraintEnd_toEndOf="@+id/iv_perwalian"
+        app:layout_constraintStart_toStartOf="@+id/iv_perwalian"
         app:layout_constraintTop_toBottomOf="@+id/batas" />
 
     <ImageView

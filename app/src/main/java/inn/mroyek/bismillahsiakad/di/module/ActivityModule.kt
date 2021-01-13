@@ -8,6 +8,7 @@ import inn.mroyek.bismillahsiakad.presentation.ui.inputnilai.InputNilaiActivity
 import inn.mroyek.bismillahsiakad.presentation.ui.khs.KhsActivity
 import inn.mroyek.bismillahsiakad.presentation.ui.krs.parent.KrsActivity
 import inn.mroyek.bismillahsiakad.presentation.ui.login.LoginActivity
+import inn.mroyek.bismillahsiakad.presentation.ui.perwalian.PerwalianActivity
 
 @Module
 abstract class ActivityModule {
@@ -29,4 +30,7 @@ abstract class ActivityModule {
 
     @ContributesAndroidInjector
     abstract fun khsActivity(): KhsActivity
+
+    @ContributesAndroidInjector
+    abstract fun perwalianActivity(): PerwalianActivity
 }

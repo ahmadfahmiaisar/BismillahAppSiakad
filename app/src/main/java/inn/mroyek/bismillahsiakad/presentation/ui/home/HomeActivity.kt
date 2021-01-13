@@ -15,6 +15,7 @@ import inn.mroyek.bismillahsiakad.presentation.ui.inputnilai.InputNilaiActivity
 import inn.mroyek.bismillahsiakad.presentation.ui.khs.KhsActivity
 import inn.mroyek.bismillahsiakad.presentation.ui.krs.parent.KrsActivity
 import inn.mroyek.bismillahsiakad.presentation.ui.login.LoginActivity
+import inn.mroyek.bismillahsiakad.presentation.ui.perwalian.PerwalianActivity
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.profile.*
 import javax.inject.Inject
@@ -48,6 +49,9 @@ class HomeActivity : AppCompatActivity(), HomeContract {
         }
         iv_nilai.setOnClickListener {
             startActivity(Intent(this, InputNilaiActivity::class.java))
+        }
+        iv_perwalian.setOnClickListener {
+            startActivity(Intent(this, PerwalianActivity::class.java))
         }
         iv_khs.setOnClickListener {
             startActivity(Intent(this, KhsActivity::class.java))
