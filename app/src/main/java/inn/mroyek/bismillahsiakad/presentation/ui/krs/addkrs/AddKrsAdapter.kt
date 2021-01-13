@@ -8,12 +8,14 @@ import inn.mroyek.bismillahsiakad.data.request.InsertKrsRequest
 import inn.mroyek.bismillahsiakad.data.request.InsertKrsRequestItem
 import inn.mroyek.bismillahsiakad.data.response.MatkulResponse.ListMatkul
 import kotlinx.android.synthetic.main.insert_and_reduce_krs.view.*
+import java.util.*
 
-class AddKrsAdapter (
-    private val listMatkul: ListMatkul?,
-    private val listener: ItemMatkulSelectedListener
+class AddKrsAdapter(
+        private val listMatkul: ListMatkul?,
+        private val listener: ItemMatkulSelectedListener
 ) : Item() {
     private val sharPref = MySiakad.pref
+
     interface ItemMatkulSelectedListener {
         fun onItemMatkulSelected(request: InsertKrsRequest)
     }
@@ -29,9 +31,11 @@ class AddKrsAdapter (
         view.tv_ruang.text = listMatkul?.ruang
         view.tv_jam.text = listMatkul?.jam
         view.tv_ket.text = listMatkul?.keterangan
+        val tahun = Calendar.getInstance().get(Calendar.YEAR).toString()
+        view.tvTahunAjaran.text = tahun
 
         val request = AddKrsFragment.requested
-        val item = InsertKrsRequestItem(fkMatkul = listMatkul?.idMatkul!!.toInt(), fkUser = sharPref.user.idUser!!.toInt(), tahun = "2021")
+        val item = InsertKrsRequestItem(fkMatkul = listMatkul?.idMatkul!!.toInt(), fkUser = sharPref.user.idUser!!.toInt(), tahun = tahun)
         view.cb_itemkrs.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 request.add(item)
