@@ -41,6 +41,8 @@ data class KrsResponse(
         @SerializedName("total_sks")
         val totalSks: String?,
         @SerializedName("username")
-        val username: String?
+        val username: String?,
+        @SerializedName("status")
+        val statusKrs: String?
     )
 }

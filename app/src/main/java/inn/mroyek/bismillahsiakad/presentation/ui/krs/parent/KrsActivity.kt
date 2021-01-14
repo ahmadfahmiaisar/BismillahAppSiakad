@@ -5,14 +5,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.gson.Gson
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import dagger.android.AndroidInjection
 import inn.mroyek.bismillahsiakad.MySiakad.Companion.pref
 import inn.mroyek.bismillahsiakad.R
 import inn.mroyek.bismillahsiakad.common.loadImageStr
-import inn.mroyek.bismillahsiakad.common.logD
 import inn.mroyek.bismillahsiakad.data.response.KrsResponse.KrsResult
 import inn.mroyek.bismillahsiakad.presentation.model.User
 import inn.mroyek.bismillahsiakad.presentation.ui.krs.addkrs.AddKrsFragment
@@ -25,8 +23,9 @@ import kotlinx.android.synthetic.main.fragment_add_krs.*
 import kotlinx.android.synthetic.main.profile.*
 import javax.inject.Inject
 
-class KrsActivity : AppCompatActivity(), ReduceKrsFragment.ShouldRefreshListener, AddKrsFragment.ShouldRefreshListener,
-        KrsContract {
+class KrsActivity : AppCompatActivity(), ReduceKrsFragment.ShouldRefreshListener,
+    AddKrsFragment.ShouldRefreshListener,
+    KrsContract {
 
     @Inject
     lateinit var presenter: KrsPresenter
@@ -87,10 +86,19 @@ class KrsActivity : AppCompatActivity(), ReduceKrsFragment.ShouldRefreshListener
         adapterKrs.clear()
         listKrs.forEach {
             adapterKrs.add(
-                    KrsAdapter(it)
+                KrsAdapter(it)
             )
+            statusKrs(it?.statusKrs)
         }
         adapterKrs.notifyDataSetChanged()
+    }
+
+    private fun statusKrs(statusKrs: String?) {
+        if (statusKrs?.contains("Accepted") == true) {
+            tvStatusKrs.text = "KRS Anda sudah disetujui oleh pembimbing akademik"
+        } else {
+            tvStatusKrs.text = "KRS Anda belum disetujui oleh pembimbing akademik"
+        }
     }
 
     override fun loading(loading: Boolean) {
@@ -109,8 +117,8 @@ class KrsActivity : AppCompatActivity(), ReduceKrsFragment.ShouldRefreshListener
     fun addKrs(view: View) {
         view.setOnClickListener {
             bottomSheetAddKrsFragment.show(
-                    supportFragmentManager,
-                    bottomSheetAddKrsFragment.tag
+                supportFragmentManager,
+                bottomSheetAddKrsFragment.tag
             )
         }
     }
@@ -118,8 +126,8 @@ class KrsActivity : AppCompatActivity(), ReduceKrsFragment.ShouldRefreshListener
     fun reduceKrs(view: View) {
         view.setOnClickListener {
             bottomSheetReduceKrsFragment.show(
-                    supportFragmentManager,
-                    bottomSheetReduceKrsFragment.tag
+                supportFragmentManager,
+                bottomSheetReduceKrsFragment.tag
             )
         }
     }
