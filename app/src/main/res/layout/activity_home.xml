@@ -79,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"
-        app:constraint_referenced_ids="iv_nilai, tv_nilai, iv_accepted, tv_accepted"
+        app:constraint_referenced_ids="iv_nilai, tv_nilai, iv_perwalian, tv_perwalian"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />

@@ -9,9 +9,11 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import dagger.android.AndroidInjection
 import inn.mroyek.bismillahsiakad.R
+import inn.mroyek.bismillahsiakad.common.loadImageStr
 import inn.mroyek.bismillahsiakad.common.toastShort
 import inn.mroyek.bismillahsiakad.data.response.KrsResponse
 import kotlinx.android.synthetic.main.activity_perwalian.*
+import kotlinx.android.synthetic.main.profile.*
 import javax.inject.Inject
 
 class PerwalianActivity : AppCompatActivity(), PerwalianContract,
@@ -30,6 +32,8 @@ class PerwalianActivity : AppCompatActivity(), PerwalianContract,
         initRecycleView()
         pg_loading.visibility = View.GONE
         tvEmpty.visibility = View.VISIBLE
+        tvInputNim.visibility = View.VISIBLE
+        groupPerwalian.visibility = View.GONE
         searchUsername.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 presenter.getKrsbyUsername(query)
@@ -37,6 +41,7 @@ class PerwalianActivity : AppCompatActivity(), PerwalianContract,
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
+                tvInputNim.visibility = View.INVISIBLE
                 return false
             }
 
@@ -44,12 +49,28 @@ class PerwalianActivity : AppCompatActivity(), PerwalianContract,
     }
 
     override fun getKrsByUsername(listKrs: List<KrsResponse.KrsResult?>) {
+        groupPerwalian.visibility = View.VISIBLE
         if (listKrs.isEmpty()) tvEmpty.visibility = View.VISIBLE else tvEmpty.visibility = View.GONE
         adapterPerwalian.clear()
         listKrs.forEach {
             adapterPerwalian.add(PerwalianAdapter(it, this, this))
             idkrs = it?.idKrs ?: ""
+            setupUiProfile(it?.namaMahasiswa, it?.username, it?.prodi, it?.email, it?.picture)
         }
+    }
+
+    private fun setupUiProfile(
+        namaMahasiswa: String?,
+        username: String?,
+        prodi: String?,
+        email: String?,
+        picture: String?
+    ) {
+        tv_nama.text = namaMahasiswa
+        tv_nim.text = username
+        tv_prodi.text = prodi
+        tv_email.text = email
+        ivPhotoProfile.loadImageStr(picture)
     }
 
     override fun postStatusKrs(response: String) {

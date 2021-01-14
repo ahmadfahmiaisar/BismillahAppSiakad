@@ -43,6 +43,19 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <TextView
+        android:id="@+id/tvInputNim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Masukkan NIM Mahasiswa dahulu dibawah ini"
+        android:textColor="#000"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchUsername"
         android:layout_width="match_parent"
@@ -50,10 +63,20 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        app:defaultQueryHint="masukan dulu nim mahasiswa disini"
+        app:defaultQueryHint="nim mahasiswa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/tvInputNim" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupPerwalian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="profile, swipeRefreshKrs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
     <include
         android:id="@+id/profile"
@@ -198,7 +221,7 @@
 
                     <TextView
                         android:id="@+id/tindakan"
-                        android:layout_width="@dimen/_60sdp"
+                        android:layout_width="@dimen/_100sdp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:gravity="center"
