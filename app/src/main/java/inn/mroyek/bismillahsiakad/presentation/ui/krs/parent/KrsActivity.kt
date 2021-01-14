@@ -84,20 +84,33 @@ class KrsActivity : AppCompatActivity(), ReduceKrsFragment.ShouldRefreshListener
     override fun getKrs(listKrs: List<KrsResult?>) {
         if (listKrs.isEmpty()) tvEmpty.visibility = View.VISIBLE else tvEmpty.visibility = View.GONE
         adapterKrs.clear()
+        val statusKrs = mutableListOf<String?>()
         listKrs.forEach {
             adapterKrs.add(
                 KrsAdapter(it)
             )
-            statusKrs(it?.statusKrs)
+            statusKrs.add(it?.statusKrs)
         }
+        statusKrs(statusKrs)
         adapterKrs.notifyDataSetChanged()
     }
 
-    private fun statusKrs(statusKrs: String?) {
-        if (statusKrs?.contains("Accepted") == true) {
-            tvStatusKrs.text = "KRS Anda sudah disetujui oleh pembimbing akademik"
-        } else {
-            tvStatusKrs.text = "KRS Anda belum disetujui oleh pembimbing akademik"
+    private fun statusKrs(statusKrs: MutableList<String?>) {
+        val statusRejected = statusKrs.any { it == "Rejected" }
+        val statusAccepted = statusKrs.any { it == "Accepted" }
+        when {
+            statusRejected && statusAccepted -> {
+                tvStatusKrs.text = "beberapa mata kuliah anda belum disetujui oleh pembimbing akademik"
+            }
+            statusRejected -> {
+                tvStatusKrs.text = "KRS Anda belum disetujui oleh pembimbing akademik"
+            }
+            statusAccepted -> {
+                tvStatusKrs.text = "KRS Anda sudah disetujui oleh pembimbing akademik"
+            }
+            else -> {
+                tvStatusKrs.text = "KRS Anda belum disetujui oleh pembimbing akademik"
+            }
         }
     }
 

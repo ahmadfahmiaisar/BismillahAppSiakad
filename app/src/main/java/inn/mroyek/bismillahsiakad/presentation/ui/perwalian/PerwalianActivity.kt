@@ -99,5 +99,6 @@ class PerwalianActivity : AppCompatActivity(), PerwalianContract,
 
     override fun onTindakanPerwalianSelected(status: String) {
         presenter.postStatusKrs(idkrs, status)
+        toastShort("status submitted")
     }
 }
