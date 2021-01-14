@@ -22,8 +22,9 @@ import kotlinx.android.synthetic.main.fragment_add_krs.*
 import kotlinx.android.synthetic.main.fragment_add_krs.view.*
 import javax.inject.Inject
 
-class AddKrsFragment(private val listener: ShouldRefreshListener) : BottomSheetDialogFragment(), AddKrsContract,
-        AddKrsAdapter.ItemMatkulSelectedListener {
+class AddKrsFragment(private val listener: ShouldRefreshListener) : BottomSheetDialogFragment(),
+    AddKrsContract,
+    AddKrsAdapter.ItemMatkulSelectedListener {
 
     @Inject
     lateinit var presenter: AddKrsPresenter
@@ -42,8 +43,8 @@ class AddKrsFragment(private val listener: ShouldRefreshListener) : BottomSheetD
     }
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         presenter.bind(this)
         // Inflate the layout for this fragment
@@ -84,8 +85,6 @@ class AddKrsFragment(private val listener: ShouldRefreshListener) : BottomSheetD
     }
 
     override fun onItemMatkulSelected(request: InsertKrsRequest) {
-
-        logD("ISINYAPA", "user ${request.any { it.fkUser in listFkUser }} matkul ${request.any { it.fkMatkul in listFkMatkul }}")
         if (request.any { it.fkUser in listFkUser }) {
             if (request.any { it.fkMatkul in listFkMatkul }) {
                 requireActivity().toastLong("item already exists")
