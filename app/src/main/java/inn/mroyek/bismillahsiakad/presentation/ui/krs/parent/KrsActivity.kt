@@ -25,7 +25,7 @@ import javax.inject.Inject
 
 class KrsActivity : AppCompatActivity(), ReduceKrsFragment.ShouldRefreshListener,
     AddKrsFragment.ShouldRefreshListener,
-    KrsContract {
+    KrsContract, View.OnClickListener {
 
     @Inject
     lateinit var presenter: KrsPresenter
@@ -57,6 +57,7 @@ class KrsActivity : AppCompatActivity(), ReduceKrsFragment.ShouldRefreshListener
         bottomSheetReduceKrsFragment = ReduceKrsFragment(this)
         bottomSheetAddKrsFragment = AddKrsFragment(this)
         swipeRefresh()
+        setupClickListener()
     }
 
     private fun swipeRefresh() {
@@ -100,7 +101,8 @@ class KrsActivity : AppCompatActivity(), ReduceKrsFragment.ShouldRefreshListener
         val statusAccepted = statusKrs.any { it == "Accepted" }
         when {
             statusRejected && statusAccepted -> {
-                tvStatusKrs.text = "beberapa mata kuliah anda belum disetujui oleh pembimbing akademik"
+                tvStatusKrs.text =
+                    "beberapa mata kuliah anda belum disetujui oleh pembimbing akademik"
             }
             statusRejected -> {
                 tvStatusKrs.text = "KRS Anda belum disetujui oleh pembimbing akademik"
@@ -127,40 +129,42 @@ class KrsActivity : AppCompatActivity(), ReduceKrsFragment.ShouldRefreshListener
         presenter.destroy()
     }
 
-    fun addKrs(view: View) {
-        view.setOnClickListener {
-            bottomSheetAddKrsFragment.show(
-                supportFragmentManager,
-                bottomSheetAddKrsFragment.tag
-            )
-        }
+    override fun onRefreshing() {
+        presenter.getKrsbyUser(sharPref.user.username)
     }
 
-    fun reduceKrs(view: View) {
-        view.setOnClickListener {
-            bottomSheetReduceKrsFragment.show(
-                supportFragmentManager,
-                bottomSheetReduceKrsFragment.tag
-            )
-        }
+    private fun setupClickListener() {
+        addkrs.setOnClickListener(this)
+        reduceKrs.setOnClickListener(this)
+        editkrs.setOnClickListener(this)
     }
 
     private var countClickEdit = 0
-    fun editKrs(view: View) {
-        view.setOnClickListener {
-            if (countClickEdit == 0) {
-                reduceKrs.visibility = View.VISIBLE
-                addkrs.visibility = View.VISIBLE
-                countClickEdit = 1
-            } else if (countClickEdit == 1) {
-                reduceKrs.visibility = View.GONE
-                addkrs.visibility = View.GONE
-                countClickEdit = 0
+    override fun onClick(p0: View?) {
+        when (p0?.id) {
+            R.id.editkrs -> {
+                if (countClickEdit == 0) {
+                    reduceKrs.visibility = View.VISIBLE
+                    addkrs.visibility = View.VISIBLE
+                    countClickEdit = 1
+                } else if (countClickEdit == 1) {
+                    reduceKrs.visibility = View.GONE
+                    addkrs.visibility = View.GONE
+                    countClickEdit = 0
+                }
+            }
+            R.id.addkrs -> {
+                bottomSheetAddKrsFragment.show(
+                    supportFragmentManager,
+                    bottomSheetAddKrsFragment.tag
+                )
+            }
+            R.id.reduceKrs -> {
+                bottomSheetReduceKrsFragment.show(
+                    supportFragmentManager,
+                    bottomSheetReduceKrsFragment.tag
+                )
             }
         }
-    }
-
-    override fun onRefreshing() {
-        presenter.getKrsbyUser(sharPref.user.username)
     }
 }
