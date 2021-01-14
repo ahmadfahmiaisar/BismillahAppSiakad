@@ -9,7 +9,7 @@ data class KhsResponse(
 ) {
     data class ListKhs(
         @SerializedName("bobot_nilai")
-        val bobotNilai: Int,
+        val bobotNilai: Float,
         @SerializedName("huruf")
         val huruf: String,
         @SerializedName("kode_matkul")

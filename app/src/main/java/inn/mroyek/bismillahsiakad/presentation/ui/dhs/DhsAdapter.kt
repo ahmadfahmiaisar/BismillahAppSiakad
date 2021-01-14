@@ -18,7 +18,7 @@ class DhsAdapter (
         view.nama_matkul.text = dhs?.namaMatkul
         view.sks.text = dhs?.totalSks
         view.huruf.text = dhs?.huruf
-        view.bobotnilai.text = dhs?.bobotNilai
+        view.bobotnilai.text = dhs?.bobotNilai.toString()
         view.semester.text = dhs?.semester
         view.tahun.text = dhs?.tahun
     }

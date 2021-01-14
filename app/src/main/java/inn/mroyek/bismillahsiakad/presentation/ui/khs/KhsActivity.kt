@@ -104,8 +104,8 @@ class KhsActivity : AppCompatActivity(), KhsContract {
     @SuppressLint("SetTextI18n")
     private fun countingIP(khs: List<KhsResponse.ListKhs>) {
         var countSks = 0
-        var countNilai = 0
-        var countIpk = 0
+        var countNilai = 0f
+        var countIpk = 0f
         val semester = mutableListOf<Int>()
         khs.forEach {
             countSks += it.totalSks

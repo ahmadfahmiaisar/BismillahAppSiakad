@@ -9,7 +9,7 @@ data class DhsResponse(
 ) {
     data class ListDhs(
         @SerializedName("bobot_nilai")
-        val bobotNilai: String,
+        val bobotNilai: Float,
         @SerializedName("email")
         val email: String,
         @SerializedName("fk_dosen")
