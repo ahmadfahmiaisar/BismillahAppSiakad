@@ -42,7 +42,6 @@ class AddKrsAdapter(
                 listener.onItemMatkulSelected(request)
             } else {
                 request.remove(item)
-                listener.onItemMatkulSelected(request)
             }
         }
     }

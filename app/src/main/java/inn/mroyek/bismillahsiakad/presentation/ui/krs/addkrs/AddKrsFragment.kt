@@ -10,14 +10,11 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import dagger.android.support.AndroidSupportInjection
-import inn.mroyek.bismillahsiakad.MySiakad
 import inn.mroyek.bismillahsiakad.R
-import inn.mroyek.bismillahsiakad.common.logD
-import inn.mroyek.bismillahsiakad.common.toastLong
+import inn.mroyek.bismillahsiakad.common.toastShort
 import inn.mroyek.bismillahsiakad.data.request.InsertKrsRequest
 import inn.mroyek.bismillahsiakad.data.response.AllKrsResponse
 import inn.mroyek.bismillahsiakad.data.response.MatkulResponse.ListMatkul
-import inn.mroyek.bismillahsiakad.presentation.ui.krs.reducekrs.ReduceKrsFragment
 import kotlinx.android.synthetic.main.fragment_add_krs.*
 import kotlinx.android.synthetic.main.fragment_add_krs.view.*
 import javax.inject.Inject
@@ -29,11 +26,10 @@ class AddKrsFragment(private val listener: ShouldRefreshListener) : BottomSheetD
     @Inject
     lateinit var presenter: AddKrsPresenter
     private val adapterAddKrs = GroupAdapter<GroupieViewHolder>()
+    private var listAllKrs = mutableListOf<AllKrsResponse.AllKrs>()
 
     companion object {
         var requested = InsertKrsRequest()
-        val listFkMatkul: ArrayList<Int> = ArrayList()
-        val listFkUser: ArrayList<Int> = ArrayList()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -79,20 +75,19 @@ class AddKrsFragment(private val listener: ShouldRefreshListener) : BottomSheetD
 
     override fun getAllKrs(listkrs: List<AllKrsResponse.AllKrs?>) {
         listkrs.forEach {
-            listFkMatkul.add(it?.fkMatkul ?: 0)
-            listFkUser.add(it?.fkUser ?: 0)
+            if (it != null) {
+                listAllKrs.add(it)
+            }
         }
     }
 
     override fun onItemMatkulSelected(request: InsertKrsRequest) {
         btn_add_krs.setOnClickListener {
-            if (request.any { it.fkUser in listFkUser }) {
-                if (request.any { it.fkMatkul in listFkMatkul }) {
-                    requireActivity().toastLong("item already exists")
+            request.forEach { insert ->
+                if (listAllKrs.any { allKrs -> allKrs.fkUser == insert.fkUser && allKrs.fkMatkul == insert.fkMatkul }) {
+                    requireActivity().toastShort("beberapa matkul sudah ada")
                 } else {
-                    presenter.insertKrs(request)
-                    listener.onRefreshing()
-                    dismiss()
+                    requireActivity().toastShort("submiteed")
                 }
             }
         }
@@ -101,8 +96,6 @@ class AddKrsFragment(private val listener: ShouldRefreshListener) : BottomSheetD
     override fun onDestroy() {
         presenter.destroy()
         requested.clear()
-        listFkMatkul.clear()
-        listFkUser.clear()
         super.onDestroy()
     }
 
