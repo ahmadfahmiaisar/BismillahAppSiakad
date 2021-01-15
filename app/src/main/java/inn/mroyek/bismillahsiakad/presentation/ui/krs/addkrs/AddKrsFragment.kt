@@ -85,21 +85,15 @@ class AddKrsFragment(private val listener: ShouldRefreshListener) : BottomSheetD
     }
 
     override fun onItemMatkulSelected(request: InsertKrsRequest) {
-        if (request.any { it.fkUser in listFkUser }) {
-            if (request.any { it.fkMatkul in listFkMatkul }) {
-                requireActivity().toastLong("item already exists")
-            } else {
-                btn_add_krs.setOnClickListener {
+        btn_add_krs.setOnClickListener {
+            if (request.any { it.fkUser in listFkUser }) {
+                if (request.any { it.fkMatkul in listFkMatkul }) {
+                    requireActivity().toastLong("item already exists")
+                } else {
                     presenter.insertKrs(request)
                     listener.onRefreshing()
                     dismiss()
                 }
-            }
-        } else {
-            btn_add_krs.setOnClickListener {
-                presenter.insertKrs(request)
-                listener.onRefreshing()
-                dismiss()
             }
         }
     }
