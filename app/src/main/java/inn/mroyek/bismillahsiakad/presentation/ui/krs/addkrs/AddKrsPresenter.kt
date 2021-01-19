@@ -1,17 +1,16 @@
 package inn.mroyek.bismillahsiakad.presentation.ui.krs.addkrs
 
-import inn.mroyek.bismillahsiakad.data.repository.krs.AddKrsRepository
-import inn.mroyek.bismillahsiakad.data.repository.krs.KrsRepository
+import inn.mroyek.bismillahsiakad.data.repository.KrsRepository
 import inn.mroyek.bismillahsiakad.data.request.InsertKrsRequest
 import inn.mroyek.bismillahsiakad.presentation.base.BasePresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class AddKrsPresenter @Inject constructor(private val repository: AddKrsRepository, private val krsRepository: KrsRepository) :
+class AddKrsPresenter @Inject constructor(private val repository: KrsRepository) :
     BasePresenter<AddKrsContract>() {
 
-    fun getMatkul(){
+    fun getMatkul() {
         disposable.add(
             repository.getMatkul()
                 .observeOn(Schedulers.io())
@@ -35,7 +34,7 @@ class AddKrsPresenter @Inject constructor(private val repository: AddKrsReposito
 
     fun getAllKrs() {
         disposable.add(
-            krsRepository.getAllKrs()
+            repository.getAllKrs()
                 .observeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

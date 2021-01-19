@@ -1,4 +1,4 @@
-package inn.mroyek.bismillahsiakad.data.repository.dhs
+package inn.mroyek.bismillahsiakad.data.repository
 
 import dagger.Reusable
 import inn.mroyek.bismillahsiakad.data.response.AllMatkulResponse.ListMatkul

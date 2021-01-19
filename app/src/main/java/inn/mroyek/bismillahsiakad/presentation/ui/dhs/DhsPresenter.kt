@@ -1,6 +1,6 @@
 package inn.mroyek.bismillahsiakad.presentation.ui.dhs
 
-import inn.mroyek.bismillahsiakad.data.repository.dhs.DhsRepository
+import inn.mroyek.bismillahsiakad.data.repository.DhsRepository
 import inn.mroyek.bismillahsiakad.presentation.base.BasePresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

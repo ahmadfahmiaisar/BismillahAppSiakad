@@ -1,7 +1,7 @@
 package inn.mroyek.bismillahsiakad.presentation.ui.krs.parent
 
 import inn.mroyek.bismillahsiakad.common.logD
-import inn.mroyek.bismillahsiakad.data.repository.krs.KrsRepository
+import inn.mroyek.bismillahsiakad.data.repository.KrsRepository
 import inn.mroyek.bismillahsiakad.presentation.base.BasePresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
