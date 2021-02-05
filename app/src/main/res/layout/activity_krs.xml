@@ -106,11 +106,15 @@
 
             <TextView
                 android:id="@+id/textView6"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/_120sdp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:text="@string/krs_kartu_rencana_studi"
+                app:layout_constraintEnd_toStartOf="@+id/reduceKrs"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -133,7 +137,8 @@
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/editkrs"
                 app:layout_constraintEnd_toStartOf="@+id/editkrs"
-                app:layout_constraintTop_toTopOf="@+id/editkrs" />
+                app:layout_constraintTop_toTopOf="@+id/editkrs"
+                tools:visibility="visible" />
 
             <TextView
                 android:id="@+id/reduceKrs"
@@ -144,7 +149,8 @@
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/addkrs"
                 app:layout_constraintEnd_toStartOf="@+id/addkrs"
-                app:layout_constraintTop_toTopOf="@+id/addkrs" />
+                app:layout_constraintTop_toTopOf="@+id/addkrs"
+                tools:visibility="visible" />
 
             <HorizontalScrollView
                 android:id="@+id/horizontalScrollView"
