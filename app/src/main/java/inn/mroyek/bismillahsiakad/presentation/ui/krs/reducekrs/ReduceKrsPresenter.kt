@@ -17,8 +17,10 @@ class ReduceKrsPresenter @Inject constructor(
                 .observeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    view?.deleteSomeKrs(it)
-                }, Throwable::printStackTrace)
+                    view!!.deleteSomeKrs(it)
+                }, {
+                    logD("ISINYAERROR", "$it")
+                })
         )
     }
 

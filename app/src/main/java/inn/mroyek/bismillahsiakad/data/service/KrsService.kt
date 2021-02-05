@@ -14,6 +14,7 @@ interface KrsService {
     @GET("krs/getkrsbyusername/{username}")
     fun getKrsbyUsername(@Path("username") username: String?): Flowable<KrsResponse>
 
+    @Headers("Content-Type: application/json")
     @HTTP(method = "POST", path = "krs/deletesomekrs", hasBody = true)
     fun deleteSomeKrs(@Body deleteSomeKrsRequest: DeleteSomeKrsRequest): Observable<String>
 

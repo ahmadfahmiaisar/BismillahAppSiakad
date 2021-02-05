@@ -69,21 +69,20 @@ class ReduceKrsFragment(private val listener: ShouldRefreshListener) : BottomShe
 
     override fun deleteSomeKrs(response: String) {
         Toast.makeText(context, response, Toast.LENGTH_LONG).show()
+        listener.onRefreshing()
         dismiss()
     }
 
     override fun onDestroy() {
+        super.onDestroy()
         presenter.destroy()
         requested.clear()
-        super.onDestroy()
     }
 
     override fun onItemKrsSelected(request: DeleteSomeKrsRequest) {
 
         btn_reduce_krs.setOnClickListener {
             presenter.reduceSomeKrs(request)
-            listener.onRefreshing()
-            dismiss()
         }
     }
 

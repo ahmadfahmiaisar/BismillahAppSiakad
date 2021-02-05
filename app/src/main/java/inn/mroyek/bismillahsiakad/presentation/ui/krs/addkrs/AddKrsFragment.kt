@@ -71,6 +71,8 @@ class AddKrsFragment(private val listener: ShouldRefreshListener) : BottomSheetD
 
     override fun insertKrs(response: String) {
         Toast.makeText(context, response, Toast.LENGTH_LONG).show()
+        listener.onRefreshing()
+        dismiss()
     }
 
     override fun getAllKrs(listkrs: List<AllKrsResponse.AllKrs?>) {
@@ -87,16 +89,16 @@ class AddKrsFragment(private val listener: ShouldRefreshListener) : BottomSheetD
                 if (listAllKrs.any { allKrs -> allKrs.fkUser == insert.fkUser && allKrs.fkMatkul == insert.fkMatkul }) {
                     requireActivity().toastShort("beberapa matkul sudah ada")
                 } else {
-                    requireActivity().toastShort("submiteed")
+                    presenter.insertKrs(request)
                 }
             }
         }
     }
 
     override fun onDestroy() {
+        super.onDestroy()
         presenter.destroy()
         requested.clear()
-        super.onDestroy()
     }
 
     interface ShouldRefreshListener {

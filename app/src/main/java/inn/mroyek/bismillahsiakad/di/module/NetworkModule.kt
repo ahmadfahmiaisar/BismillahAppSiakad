@@ -1,48 +1,93 @@
 package inn.mroyek.bismillahsiakad.di.module
 
-import android.app.Application
-import android.content.Context
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import inn.mroyek.bismillahsiakad.BuildConfig
-import inn.mroyek.bismillahsiakad.data.service.DhsService
-import inn.mroyek.bismillahsiakad.data.service.KrsService
-import inn.mroyek.bismillahsiakad.data.service.UserService
 import io.reactivex.schedulers.Schedulers
-import okhttp3.Cache
-import okhttp3.CacheControl
+import okhttp3.ConnectionPool
 import okhttp3.OkHttpClient
+import okhttp3.Protocol
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.converter.scalars.ScalarsConverterFactory
-import java.io.File
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 
 @Module
 object NetworkModule {
+
+    @JvmStatic
+    @Provides
+    @Singleton
+    fun provideLoggingInterceptor(): HttpLoggingInterceptor {
+        val loggingInterceptor = HttpLoggingInterceptor()
+        loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+        return loggingInterceptor
+    }
+
+    @JvmStatic
+    @Provides
+    @Singleton
+    fun provideOkHttpClient(
+        loggingInterceptor: HttpLoggingInterceptor
+    ): OkHttpClient {
+        val client = OkHttpClient.Builder()
+            .connectTimeout(10000, TimeUnit.SECONDS)
+            .writeTimeout(10000, TimeUnit.SECONDS)
+            .readTimeout(10000, TimeUnit.SECONDS)
+        if (BuildConfig.DEBUG) {
+            client.addInterceptor(loggingInterceptor)
+        }
+        return client.build()
+    }
+
+    val gson: Gson = GsonBuilder().setLenient().create()
+
+    @JvmStatic
+    @Provides
+    @Singleton
+    fun providesRetrofit(okHttpClient: OkHttpClient): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(BuildConfig.BASE_URL)
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .client(okHttpClient)
+            .build()
+    }
+
+
+/*
     private const val CACHE_CONTROL_HEADER = "Cache-Control"
 
     @JvmStatic
     @Singleton
     @Provides
     fun provideOkHttpClient(app: Application): OkHttpClient {
-        val context: Context = app.applicationContext
+//        val context: Context = app.applicationContext
 
-        /*val cacheControl = CacheControl.Builder()
+        */
+/*val cacheControl = CacheControl.Builder()
             .maxAge(10, TimeUnit.DAYS)
-            .build()*/
+            .build()*//*
+
 
 //        val cache = Cache(File(context.cacheDir, "cache"), 10 * 1024 * 1024)
 
         return OkHttpClient.Builder()
 //            .cache(cache)
-            .connectTimeout(2000, TimeUnit.SECONDS)
-            .writeTimeout(2000, TimeUnit.SECONDS)
-            .readTimeout(2000, TimeUnit.SECONDS)
+           */
+/* .connectTimeout(10000, TimeUnit.SECONDS)
+            .writeTimeout(10000, TimeUnit.SECONDS)
+            .readTimeout(10000, TimeUnit.SECONDS)*//*
+
+         */
+/*   .connectionPool(ConnectionPool(0, 1, TimeUnit.NANOSECONDS))
+            .protocols(listOf(Protocol.HTTP_1_1))*//*
+
             .addNetworkInterceptor(HttpLoggingInterceptor().apply {
                 level = HttpLoggingInterceptor.Level.BODY
             })
@@ -62,6 +107,8 @@ object NetworkModule {
             .build()
     }
 
+    val gson: Gson = GsonBuilder().setLenient().create()
+
     @JvmStatic
     @Singleton
     @Provides
@@ -69,10 +116,11 @@ object NetworkModule {
         return Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
-            .addConverterFactory(GsonConverterFactory.create())
-            .addConverterFactory(ScalarsConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
+//            .addConverterFactory(ScalarsConverterFactory.create())
             .client(okHttpClient)
             .build()
     }
+*/
 
 }
