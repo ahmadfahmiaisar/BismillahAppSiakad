@@ -23,7 +23,10 @@ class PerwalianActivity : AppCompatActivity(), PerwalianContract,
     lateinit var presenter: PerwalianPresenter
     private val adapterPerwalian = GroupAdapter<GroupieViewHolder>()
 
-    private var idkrs = ""
+    companion object {
+        var firstOpen = true
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
@@ -53,10 +56,10 @@ class PerwalianActivity : AppCompatActivity(), PerwalianContract,
         if (listKrs.isEmpty()) tvEmpty.visibility = View.VISIBLE else tvEmpty.visibility = View.GONE
         adapterPerwalian.clear()
         listKrs.forEach {
-            adapterPerwalian.add(PerwalianAdapter(it, this, this))
-            idkrs = it?.idKrs ?: ""
+            adapterPerwalian.add(PerwalianAdapter(it, this))
             setupUiProfile(it?.namaMahasiswa, it?.username, it?.prodi, it?.email, it?.picture)
         }
+        adapterPerwalian.notifyDataSetChanged()
     }
 
     private fun setupUiProfile(
@@ -74,7 +77,7 @@ class PerwalianActivity : AppCompatActivity(), PerwalianContract,
     }
 
     override fun postStatusKrs(response: String) {
-        toastShort("status submitted")
+        toastShort("status $response")
     }
 
     private fun initRecycleView() {
@@ -97,8 +100,7 @@ class PerwalianActivity : AppCompatActivity(), PerwalianContract,
         presenter.destroy()
     }
 
-    override fun onTindakanPerwalianSelected(status: String) {
+    override fun onTindakanPerwalianSelected(idkrs: String?, status: String) {
         presenter.postStatusKrs(idkrs, status)
-        toastShort("status submitted")
     }
 }

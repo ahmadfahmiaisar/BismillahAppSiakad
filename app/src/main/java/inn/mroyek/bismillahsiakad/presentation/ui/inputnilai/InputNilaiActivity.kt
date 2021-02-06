@@ -23,9 +23,9 @@ class InputNilaiActivity : AppCompatActivity(), InputNilaiContract, InputNilaiAd
     lateinit var presenter: InputNilaiPresenter
 
     private val adapterInputNilai = GroupAdapter<GroupieViewHolder>()
-    private var idMatkul = "0"
-    private var tahunAjaran = "2020"
-    private var semester = "1"
+    private var idMatkul = ""
+    private var tahunAjaran = ""
+    private var semester = ""
     private val listNamaMatkul = mutableListOf<String>()
     private val listIdMatkul = mutableListOf<String>()
 

@@ -33,7 +33,7 @@ class KrsRepository @Inject constructor(private val service: KrsService) {
     }
 
     //add krs
-    fun getMatkul() : Flowable<MutableList<MatkulResponse.ListMatkul>> {
+    fun getMatkul(): Flowable<MutableList<MatkulResponse.ListMatkul>> {
         return service.getMatkul()
             .flatMap { Flowable.fromIterable(it.listMatkul) }
             .toList()
@@ -46,7 +46,7 @@ class KrsRepository @Inject constructor(private val service: KrsService) {
     }
 
     //delete krs
-    fun reduceKrs(deleteSomeKrsRequest: DeleteSomeKrsRequest) : Observable<String>{
+    fun reduceKrs(deleteSomeKrsRequest: DeleteSomeKrsRequest): Observable<String> {
         return service.deleteSomeKrs(deleteSomeKrsRequest)
             .map { it }
     }
