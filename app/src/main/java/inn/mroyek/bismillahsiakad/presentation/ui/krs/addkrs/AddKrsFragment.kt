@@ -84,8 +84,8 @@ class AddKrsFragment(private val listener: ShouldRefreshListener) : BottomSheetD
     }
 
     override fun onItemMatkulSelected(request: InsertKrsRequest) {
-        btn_add_krs.setOnClickListener {
-            request.forEach { insert ->
+        request.forEach { insert ->
+            btn_add_krs.setOnClickListener {
                 if (listAllKrs.any { allKrs -> allKrs.fkUser == insert.fkUser && allKrs.fkMatkul == insert.fkMatkul }) {
                     requireActivity().toastShort("beberapa matkul sudah ada")
                 } else {
