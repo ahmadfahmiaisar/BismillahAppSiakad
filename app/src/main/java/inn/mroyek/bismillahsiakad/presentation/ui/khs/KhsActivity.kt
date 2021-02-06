@@ -19,6 +19,7 @@ import inn.mroyek.bismillahsiakad.presentation.model.User
 import kotlinx.android.synthetic.main.activity_khs.*
 import kotlinx.android.synthetic.main.profile.*
 import javax.inject.Inject
+import kotlin.math.roundToLong
 
 class KhsActivity : AppCompatActivity(), KhsContract {
     @Inject
@@ -40,7 +41,8 @@ class KhsActivity : AppCompatActivity(), KhsContract {
 
     private fun setupSpinner() {
         val listSemester = listOf("pilih semester", "1", "2", "3", "4", "5", "6", "7", "8")
-        val adapterSpinner = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listSemester)
+        val adapterSpinner =
+            ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listSemester)
         spinner.adapter = adapterSpinner
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
@@ -65,7 +67,7 @@ class KhsActivity : AppCompatActivity(), KhsContract {
         adapterKhs.clear()
         listKhs.forEach {
             adapterKhs.add(
-                    KhsAdapter(it)
+                KhsAdapter(it)
             )
         }
         countingIP(listKhs)
@@ -117,7 +119,7 @@ class KhsActivity : AppCompatActivity(), KhsContract {
         countIpk += ip
         val ipk = countIpk / countSemester
 
-        tvIP.text = "IP Semester : $ip"
-        tvIPK.text = "IPK : $ipk"
+        tvIP.text = "IP Semester : ${ip.roundToLong()}"
+        tvIPK.text = "IPK : ${ipk.roundToLong()}"
     }
 }
